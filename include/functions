@@ -556,6 +556,23 @@
                     echo "${TEXT}${RESULTPART}"
                 fi
             fi
+            
+            if [ ${IS_RUNNING_TESTS} -eq 1 -a -n "${TEXT}" -a -n "${RESULT}" ]; then
+                DESCP=""
+                INDENT_TMP=$INDENT
+                while [ ${INDENT_TMP} -gt 0 ]
+                do
+                    DESCP=$DESCP" "
+                    INDENT_TMP=$((${INDENT_TMP}-1))
+                done
+                DESCP=${DESCP}${TEXT}
+                if [ ${IS_NEW_TEST_DETAIL} -ne 1 ]; then
+                    JsonOutput ","
+                else
+                    IS_NEW_TEST_DETAIL=0
+                fi
+                JsonOutput "{\"${DESCP}\":\"${RESULT}\"}"
+            fi
         fi
     }
 
@@ -1425,6 +1442,12 @@
             echo ""
             echo "[+] ${SECTION}$1${NORMAL}"
             echo "------------------------------------"
+
+            if [ ${IS_RUNNING_TESTS} -eq 1 ]; then
+                IS_NEW_TEST=1
+                JsonOutput "\"Name\":\"$1\","
+                JsonOutput "\"Tests\":["
+            fi
         fi
         LogTextBreak
         LogText "Action: Performing tests from category: $1"
@@ -2748,6 +2771,18 @@
         # Save timestamp for next time the Register function is called
         PREVIOUS_TEST="${TEST_NO}"
         PREVIOUS_TS="${CURRENT_TS}"
+
+        if [ ${IS_RUNNING_TESTS} -eq 1 ]; then
+            if [ ${IS_NEW_TEST} -ne 1 ]; then
+                JsonOutput "]},"
+            else
+                IS_NEW_TEST=0
+            fi
+            JsonOutput "{\"Test No\":\"${TEST_NO}\","
+            JsonOutput "\"Test Description\":\"${TEST_DESCRIPTION}\","
+            JsonOutput "\"Detail\":["
+            IS_NEW_TEST_DETAIL=1
+        fi
     }
 
 
@@ -3723,6 +3758,19 @@
         if IsDeveloperMode; then Debug "Warning: old ShowResult() function is used. Please replace any reference with WaitForKeyPress."; fi
     }
 
+
+    ################################################################################
+    # Name        : JsonOutput()
+    # Description : Function logtext (redirect data ($1) to json file)
+    #
+    # Parameters  : $1 = text (string)
+    # Returns     : <nothing>
+    # Usage       : JsonOutput "This line goes into the log file"
+    ################################################################################
+
+    JsonOutput() {
+        if [ ! "${JSON_REPORT}" = "" ]; then echo $1 >> ${JSON_REPORT}; fi
+    }
 
 #================================================================================
 # Lynis is part of Lynis Enterprise and released under GPLv3 license

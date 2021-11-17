@@ -117,7 +117,8 @@
             if [ -z "${CUSTOM_URL_PROTOCOL}" ]; then CUSTOM_URL_PROTOCOL="https"; fi
             if [ -z "${CUSTOM_URL_PREPEND}" ]; then CUSTOM_URL_PREPEND="your-domain.example.org/controls/"; fi
             if [ -z "${CUSTOM_URL_APPEND}" ]; then CUSTOM_URL_APPEND="/"; fi
-
+            
+            JsonOutput "\"Results\":{\"Warnings\":["
             # Show warnings from logfile
             SWARNINGS=$(${GREPBINARY} 'Warning: ' ${LOGFILE} | sed 's/ /!space!/g')
             if [ -z "${SWARNINGS}" ]; then
@@ -125,6 +126,7 @@
             else
                 echo "  ${WARNING}Warnings${NORMAL} (${TOTAL_WARNINGS}):"
                 echo "  ${WHITE}----------------------------${NORMAL}"
+                IS_FIRST=1
                 for WARNING in ${SWARNINGS}; do
                     SOLUTION=""
                     SHOWWARNING=$(echo ${WARNING} | sed 's/!space!/ /g' | sed 's/^.* Warning: //' | sed 's/\[details:\(.*\)\] \[solution:\(.*\)\]//' | sed 's/test://')
@@ -139,25 +141,42 @@
                     done
                     IS_CUSTOM=$(echo ${ADDLINK} | grep "^CUST")
                     echo "  ${RED}!${NORMAL} ${SHOWWARNING}"
-                    if [ ! "${DETAILS}" = "-" -a -n "${DETAILS}" ]; then echo "    - Details  : ${CYAN}${DETAILS}${NORMAL}"; fi
-                    if [ ${SHOW_REPORT_SOLUTION} -eq 1 -a ! "${SOLUTION}" = "-" ]; then echo "    - Solution : ${SOLUTION}"; fi
+                    if [ ${IS_FIRST} -ne 1 ]; then
+                        JsonOutput ","
+                    else
+                        IS_FIRST=0
+                    fi
+                    JsonOutput "{\"Descp\":\"${SHOWWARNING}\""
+                    if [ ! "${DETAILS}" = "-" -a -n "${DETAILS}" ]; then 
+                        echo "    - Details  : ${CYAN}${DETAILS}${NORMAL}";
+                        JsonOutput ",\"Details\":\"${DETAILS}\""
+                    fi
+                    if [ ${SHOW_REPORT_SOLUTION} -eq 1 -a ! "${SOLUTION}" = "-" ]; then 
+                        echo "    - Solution : ${SOLUTION}"; 
+                        JsonOutput ",\"Solution\":\"${SOLUTION}\""
+                    fi
                     if [ -z "${IS_CUSTOM}" ]; then
                         echo "      ${CONTROL_URL_PROTOCOL}://${CONTROL_URL_PREPEND}${ADDLINK}${CONTROL_URL_APPEND}"
+                        JsonOutput ",\"Reference\":\"${CONTROL_URL_PROTOCOL}://${CONTROL_URL_PREPEND}${ADDLINK}${CONTROL_URL_APPEND}\""
                     else
                         echo "      ${CUSTOM_URL_PROTOCOL}://${CUSTOM_URL_PREPEND}${ADDLINK}${CUSTOM_URL_APPEND}"
+                        JsonOutput ",\"Reference\":\"${CUSTOM_URL_PROTOCOL}://${CUSTOM_URL_PREPEND}${ADDLINK}${CUSTOM_URL_APPEND}\""
                     fi
                     echo ""
+                    JsonOutput "}"
                 done
             fi
+            JsonOutput "],"
 
             # Show suggestions from logfile
             SUGGESTIONS=$(${GREPBINARY} 'Suggestion: ' ${LOGFILE} | sed 's/ /!space!/g')
-
+            JsonOutput "\"Suggestion\":["
             if [ -z "${SUGGESTIONS}" ]; then
                 echo "  ${OK}No suggestions${NORMAL}"; echo ""
             else
                 echo "  ${YELLOW}Suggestions${NORMAL} (${TOTAL_SUGGESTIONS}):"
                 echo "  ${WHITE}----------------------------${NORMAL}"
+                IS_FIRST=1
                 for SUGGESTION in ${SUGGESTIONS}; do
                     SOLUTION=""
                     SHOWSUGGESTION=$(echo ${SUGGESTION} | sed 's/!space!/ /g' | sed 's/^.* Suggestion: //' | sed 's/\[details:\(.*\)\] \[solution:\(.*\)\]//' | sed 's/test://')
@@ -172,16 +191,33 @@
                     done
                     IS_CUSTOM=$(echo ${ADDLINK} | grep "^CUST")
                     echo "  ${YELLOW}*${NORMAL} ${SHOWSUGGESTION}"
-                    if [ ! "${DETAILS}" = "-" -a -n "${DETAILS}" ]; then echo "    - Details  : ${CYAN}${DETAILS}${NORMAL}"; fi
-                    if [ ${SHOW_REPORT_SOLUTION} -eq 1 -a ! "${SOLUTION}" = "-" ]; then echo "    - Solution : ${SOLUTION}"; fi
+                    if [ ${IS_FIRST} -ne 1 ]; then
+                        JsonOutput ","
+                    else
+                        IS_FIRST=0
+                    fi
+                    JsonOutput "{\"Descp\":\"${SHOWSUGGESTION}\""
+                    if [ ! "${DETAILS}" = "-" -a -n "${DETAILS}" ]; then 
+                        echo "    - Details  : ${CYAN}${DETAILS}${NORMAL}"; 
+                        JsonOutput ",\"Details\":\"${DETAILS}\""
+                    fi
+                    if [ ${SHOW_REPORT_SOLUTION} -eq 1 -a ! "${SOLUTION}" = "-" ]; then 
+                        echo "    - Solution : ${SOLUTION}"; 
+                        JsonOutput ",\"Solution\":\"${SOLUTION}\""
+                    fi
                     if [ -z "${IS_CUSTOM}" ]; then
                         echo "      ${GRAY}${CONTROL_URL_PROTOCOL}://${CONTROL_URL_PREPEND}${ADDLINK}${CONTROL_URL_APPEND}${NORMAL}"
+                        JsonOutput ",\"Reference\":\"${CONTROL_URL_PROTOCOL}://${CONTROL_URL_PREPEND}${ADDLINK}${CONTROL_URL_APPEND}\""
                     else
                         echo "      ${GRAY}${CUSTOM_URL_PROTOCOL}://${CUSTOM_URL_PREPEND}${ADDLINK}${CUSTOM_URL_APPEND}${NORMAL}"
+                        JsonOutput ",\"Reference\":\"${CUSTOM_URL_PROTOCOL}://${CUSTOM_URL_PREPEND}${ADDLINK}${CUSTOM_URL_APPEND}\""
                     fi
                     echo ""
+                    JsonOutput "}"
                 done
             fi
+            JsonOutput "],"
+
             # Show tip on how to continue (next steps)
             if [ ! "${SWARNINGS}" = "" -o ! "${SUGGESTIONS}" = "" ]; then
                 echo "  ${CYAN}Follow-up${NORMAL}:"
@@ -197,11 +233,15 @@
             echo "  ${WHITE}Lynis security scan details${NORMAL}:"
             echo ""
             echo "  ${CYAN}Hardening index${NORMAL} : ${WHITE}${HPINDEX}${NORMAL} ${HPGRAPH}"
+            JsonOutput "\"Hardening index\":${HPINDEX},"
             echo "  ${CYAN}Tests performed${NORMAL} : ${WHITE}${CTESTS_PERFORMED}${NORMAL}"
+            JsonOutput "\"Tests performed\":${CTESTS_PERFORMED},"
             if [ ${SKIP_PLUGINS} -eq 0 ]; then
                 echo "  ${CYAN}Plugins enabled${NORMAL} : ${WHITE}${N_PLUGIN_ENABLED}${NORMAL}"
+                JsonOutput "\"Plugins enabled\":${N_PLUGIN_ENABLED},"
             else
                 echo "  ${CYAN}Plugins enabled${NORMAL} : ${WHITE}Skipped${NORMAL}"
+                JsonOutput "\"Plugins enabled\":0,"
             fi
             echo ""
             echo "  ${WHITE}Components${NORMAL}:"
@@ -275,6 +315,7 @@
                 fi
             fi
 
+            JsonOutput "\"Skipped Tests\":["
             # Display what tests are skipped in non-privileged scan for awareness
             if [ ${PENTESTINGMODE} -eq 1 -a ! "${SKIPPED_TESTS_ROOTONLY}" = "" ]; then
                 echo ""
@@ -284,14 +325,21 @@
                 # Split entries
                 FIND=$(echo ${FIND} | sed 's/====/ /g')
                 # Display found entries
+                IS_FIRST=1
                 for ITEM in ${FIND}; do
                     OUTPUT=$(echo ${ITEM} | sed 's/:space:/ /g')
                     echo "    ${OUTPUT}"
+                    if [ ${IS_FIRST} -ne 1 ]; then
+                        JsonOutput ","
+                    else
+                        IS_FIRST=0
+                    fi
+                    JsonOutput "\"${OUTPUT}\""
                 done
                 echo ""
                 echo "================================================================================"
             fi
-
+            JsonOutput "]}"
             echo ""
         fi
 

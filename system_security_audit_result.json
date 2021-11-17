@@ -1,0 +1,2464 @@
+{"SystemInfo":{
+"Program version":"3.0.7",
+"Operating system":"Linux",
+"Operating system name":"Ubuntu",
+"perating system version":"20.04",
+"Kernel version":"4.15.0",
+"Hardware platform":"x86_64"
+},
+"CheckList":[
+{
+"Name":"Boot and services",
+"Tests":[
+{"Test No":"BOOT-5102",
+"Test Description":"Check for AIX boot device",
+"Detail":[
+]},
+{"Test No":"BOOT-5104",
+"Test Description":"Determine service manager",
+"Detail":[
+{" - Service Manager":"upstart"}
+]},
+{"Test No":"BOOT-5106",
+"Test Description":"Check EFI boot file on Mac OS X/macOS",
+"Detail":[
+]},
+{"Test No":"BOOT-5108",
+"Test Description":"Check Syslinux as bootloader",
+"Detail":[
+]},
+{"Test No":"BOOT-5109",
+"Test Description":"Check rEFInd as bootloader",
+"Detail":[
+]},
+{"Test No":"BOOT-5116",
+"Test Description":"Check if system is booted in UEFI mode",
+"Detail":[
+{" - Checking UEFI boot":"DISABLED"}
+]},
+{"Test No":"BOOT-5117",
+"Test Description":"Check for systemd-boot bootloader presence",
+"Detail":[
+]},
+{"Test No":"BOOT-5121",
+"Test Description":"Check for GRUB boot loader presence",
+"Detail":[
+]},
+{"Test No":"BOOT-5122",
+"Test Description":"Check for GRUB boot password",
+"Detail":[
+]},
+{"Test No":"BOOT-5124",
+"Test Description":"Check for FreeBSD boot loader presence",
+"Detail":[
+]},
+{"Test No":"BOOT-5261",
+"Test Description":"Check for DragonFly boot loader presence",
+"Detail":[
+]},
+{"Test No":"BOOT-5126",
+"Test Description":"Check for NetBSD boot loader presence",
+"Detail":[
+]},
+{"Test No":"BOOT-5139",
+"Test Description":"Check for LILO boot loader presence",
+"Detail":[
+]},
+{"Test No":"BOOT-5140",
+"Test Description":"Check for ELILO boot loader presence",
+"Detail":[
+]},
+{"Test No":"BOOT-5142",
+"Test Description":"Check SPARC Improved boot loader (SILO)",
+"Detail":[
+]},
+{"Test No":"BOOT-5155",
+"Test Description":"Check for YABOOT boot loader configuration file",
+"Detail":[
+]},
+{"Test No":"BOOT-5159",
+"Test Description":"Check for OpenBSD boot loader presence",
+"Detail":[
+{" - Boot loader":"NONE FOUND"}
+]},
+{"Test No":"BOOT-5165",
+"Test Description":"Check for FreeBSD boot services",
+"Detail":[
+]},
+{"Test No":"BOOT-5170",
+"Test Description":"Check for Solaris boot daemons",
+"Detail":[
+]},
+{"Test No":"BOOT-5177",
+"Test Description":"Check for Linux boot and running services",
+"Detail":[
+{" - Check running services (systemctl)":"DONE"}
+,
+{" - Check enabled services at boot (systemctl)":"DONE"}
+]},
+{"Test No":"BOOT-5180",
+"Test Description":"Check for Linux boot services (Debian style)",
+"Detail":[
+]},
+{"Test No":"BOOT-5184",
+"Test Description":"Check permissions for boot files/scripts",
+"Detail":[
+{" - Check startup files (permissions)":"OK"}
+]},
+{"Test No":"BOOT-5202",
+"Test Description":"Check uptime of system",
+"Detail":[
+]},
+{"Test No":"BOOT-5260",
+"Test Description":"Check single user mode for systemd",
+"Detail":[
+]},
+{"Test No":"BOOT-5262",
+"Test Description":"Check for OpenBSD boot daemons",
+"Detail":[
+]},
+{"Test No":"BOOT-5263",
+"Test Description":"Check permissions for boot files/scripts",
+"Detail":[
+]},
+{"Test No":"BOOT-5264",
+"Test Description":"Run systemd-analyze security",
+"Detail":[
+]}]}
+,
+{
+"Name":"Kernel",
+"Tests":[
+{"Test No":"KRNL-5622",
+"Test Description":"Determine Linux default run level",
+"Detail":[
+{" - Checking default run level":"UNKNOWN"}
+]},
+{"Test No":"KRNL-5677",
+"Test Description":"Check CPU options and support",
+"Detail":[
+{" CPU support: PAE and/or NoeXecute supported":"FOUND"}
+]},
+{"Test No":"KRNL-5695",
+"Test Description":"Determine Linux kernel version and release number",
+"Detail":[
+{" - Checking kernel version and release":"DONE"}
+]},
+{"Test No":"KRNL-5723",
+"Test Description":"Determining if Linux kernel is monolithic",
+"Detail":[
+]},
+{"Test No":"KRNL-5726",
+"Test Description":"Checking Linux loaded kernel modules",
+"Detail":[
+]},
+{"Test No":"KRNL-5728",
+"Test Description":"Checking Linux kernel config",
+"Detail":[
+{" - Checking Linux kernel configuration file":"NOT FOUND"}
+]},
+{"Test No":"KRNL-5730",
+"Test Description":"Checking disk I/O kernel scheduler",
+"Detail":[
+]},
+{"Test No":"KRNL-5745",
+"Test Description":"Checking FreeBSD loaded kernel modules",
+"Detail":[
+]},
+{"Test No":"KRNL-5831",
+"Test Description":"Checking DragonFly loaded kernel modules",
+"Detail":[
+]},
+{"Test No":"KRNL-5770",
+"Test Description":"Checking active kernel modules",
+"Detail":[
+]},
+{"Test No":"KRNL-5788",
+"Test Description":"Checking availability new Linux kernel",
+"Detail":[
+{" - Checking for available kernel update":"UNKNOWN"}
+]},
+{"Test No":"KRNL-5820",
+"Test Description":"Checking core dumps configuration",
+"Detail":[
+{" - configuration in etc/profile":"DEFAULT"}
+,
+{" - 'hard' configuration in security/limits.conf":"DEFAULT"}
+,
+{" - 'soft' configuration in security/limits.conf":"DEFAULT"}
+,
+{" - Checking setuid core dumps configuration":"PROTECTED"}
+]},
+{"Test No":"KRNL-5830",
+"Test Description":"Checking if system is running on the latest installed kernel",
+"Detail":[
+{" - Check if reboot is needed":"UNKNOWN"}
+]}]}
+,
+{
+"Name":"Memory and Processes",
+"Tests":[
+{"Test No":"PROC-3602",
+"Test Description":"Checking /proc/meminfo for memory details",
+"Detail":[
+{" - Checking /proc/meminfo":"FOUND"}
+]},
+{"Test No":"PROC-3604",
+"Test Description":"Query prtconf for memory details",
+"Detail":[
+]},
+{"Test No":"PROC-3612",
+"Test Description":"Check dead or zombie processes",
+"Detail":[
+{" - Searching for dead/zombie processes":"NOT FOUND"}
+]},
+{"Test No":"PROC-3614",
+"Test Description":"Check heavy IO waiting based processes",
+"Detail":[
+{" - Searching for IO waiting processes":"NOT FOUND"}
+]},
+{"Test No":"PROC-3802",
+"Test Description":"Check presence of prelink tooling",
+"Detail":[
+{" - Search prelink tooling":"NOT FOUND"}
+]}]}
+,
+{
+"Name":"Users, Groups and Authentication",
+"Tests":[
+{"Test No":"AUTH-9204",
+"Test Description":"Check users with an UID of zero",
+"Detail":[
+{" - Administrator accounts":"OK"}
+]},
+{"Test No":"AUTH-9208",
+"Test Description":"Check non-unique accounts in passwd file",
+"Detail":[
+{" - Unique UIDs":"OK"}
+]},
+{"Test No":"AUTH-9212",
+"Test Description":"Test group file",
+"Detail":[
+]},
+{"Test No":"AUTH-9216",
+"Test Description":"Check group and shadow group files",
+"Detail":[
+{" - Consistency of group files (grpck)":"OK"}
+]},
+{"Test No":"AUTH-9218",
+"Test Description":"Check login shells for passwordless accounts",
+"Detail":[
+]},
+{"Test No":"AUTH-9222",
+"Test Description":"Check unique groups (IDs)",
+"Detail":[
+{" - Unique group IDs":"OK"}
+]},
+{"Test No":"AUTH-9226",
+"Test Description":"Check unique group names",
+"Detail":[
+{" - Unique group names":"OK"}
+]},
+{"Test No":"AUTH-9228",
+"Test Description":"Check password file consistency with pwck",
+"Detail":[
+{" - Password file consistency":"OK"}
+]},
+{"Test No":"AUTH-9229",
+"Test Description":"Check password hashing methods",
+"Detail":[
+{" - Password hashing methods":"SUGGESTION"}
+]},
+{"Test No":"AUTH-9230",
+"Test Description":"Check password hashing rounds",
+"Detail":[
+{" - Checking password hashing rounds":"DISABLED"}
+]},
+{"Test No":"AUTH-9234",
+"Test Description":"Query user accounts",
+"Detail":[
+{" - Query system users (non daemons)":"DONE"}
+]},
+{"Test No":"AUTH-9240",
+"Test Description":"Query NIS+ authentication support",
+"Detail":[
+{" - NIS+ authentication support":"NOT ENABLED"}
+]},
+{"Test No":"AUTH-9242",
+"Test Description":"Query NIS authentication support",
+"Detail":[
+{" - NIS authentication support":"NOT ENABLED"}
+]},
+{"Test No":"AUTH-9250",
+"Test Description":"Checking sudoers file",
+"Detail":[
+{" - Sudoers file":"NOT FOUND"}
+]},
+{"Test No":"AUTH-9252",
+"Test Description":"Check ownership and permissions for sudo configuration files",
+"Detail":[
+]},
+{"Test No":"AUTH-9254",
+"Test Description":"Solaris passwordless accounts",
+"Detail":[
+]},
+{"Test No":"AUTH-9262",
+"Test Description":"Checking presence password strength testing tools (PAM)",
+"Detail":[
+{" - PAM password strength tools":"SUGGESTION"}
+]},
+{"Test No":"AUTH-9264",
+"Test Description":"Checking presence pam.conf",
+"Detail":[
+{" - PAM configuration files (pam.conf)":"FOUND"}
+]},
+{"Test No":"AUTH-9266",
+"Test Description":"Checking presence pam.d files",
+"Detail":[
+{" - PAM configuration files (pam.d)":"FOUND"}
+]},
+{"Test No":"AUTH-9268",
+"Test Description":"Checking presence pam.d files",
+"Detail":[
+{" - PAM modules":"FOUND"}
+]},
+{"Test No":"AUTH-9278",
+"Test Description":"Determine LDAP support in PAM files",
+"Detail":[
+{" - LDAP module in PAM":"NOT FOUND"}
+]},
+{"Test No":"AUTH-9282",
+"Test Description":"Checking password protected account without expire date",
+"Detail":[
+{" - Accounts without expire date":"SUGGESTION"}
+]},
+{"Test No":"AUTH-9283",
+"Test Description":"Checking accounts without password",
+"Detail":[
+{" - Accounts without password":"OK"}
+]},
+{"Test No":"AUTH-9284",
+"Test Description":"Check locked user accounts in /etc/passwd",
+"Detail":[
+{" - Locked accounts":"FOUND"}
+]},
+{"Test No":"AUTH-9286",
+"Test Description":"Checking user password aging",
+"Detail":[
+{" - Checking user password aging (minimum)":"DISABLED"}
+,
+{" - User password aging (maximum)":"DISABLED"}
+]},
+{"Test No":"AUTH-9288",
+"Test Description":"Checking for expired passwords",
+"Detail":[
+{" - Checking expired passwords":"OK"}
+]},
+{"Test No":"AUTH-9304",
+"Test Description":"Check single user login configuration",
+"Detail":[
+]},
+{"Test No":"AUTH-9306",
+"Test Description":"Check single boot authentication",
+"Detail":[
+]},
+{"Test No":"AUTH-9308",
+"Test Description":"Check single user login configuration",
+"Detail":[
+{" - Checking Linux single user mode authentication":"OK"}
+]},
+{"Test No":"AUTH-9328",
+"Test Description":"Default umask values",
+"Detail":[
+{" - umask (/etc/profile)":"NOT FOUND"}
+,
+{" - umask (/etc/login.defs)":"SUGGESTION"}
+]},
+{"Test No":"AUTH-9340",
+"Test Description":"Solaris account locking",
+"Detail":[
+]},
+{"Test No":"AUTH-9402",
+"Test Description":"Query LDAP authentication support",
+"Detail":[
+{" - LDAP authentication support":"NOT ENABLED"}
+]},
+{"Test No":"AUTH-9406",
+"Test Description":"Query LDAP servers in client configuration",
+"Detail":[
+]},
+{"Test No":"AUTH-9408",
+"Test Description":"Logging of failed login attempts",
+"Detail":[
+{" - Logging failed login attempts":"ENABLED"}
+]},
+{"Test No":"AUTH-9409",
+"Test Description":"Checking /etc/doas.conf file",
+"Detail":[
+]},
+{"Test No":"AUTH-9410",
+"Test Description":"Check /etc/doas.conf file permissions",
+"Detail":[
+]}]}
+,
+{
+"Name":"Shells",
+"Tests":[
+{"Test No":"SHLL-6202",
+"Test Description":"Check console TTYs",
+"Detail":[
+]},
+{"Test No":"SHLL-6211",
+"Test Description":"Available and valid shells",
+"Detail":[
+]},
+{"Test No":"SHLL-6220",
+"Test Description":"Idle session killing tools or settings",
+"Detail":[
+{" - Session timeout settings/tools":"NONE"}
+]},
+{"Test No":"SHLL-6230",
+"Test Description":"Perform umask check for shell configurations",
+"Detail":[
+{" - Checking default umask in /etc/bash.bashrc":"NONE"}
+,
+{" - Checking default umask in /etc/profile":"NONE"}
+]}]}
+,
+{
+"Name":"File systems",
+"Tests":[
+{"Test No":"FILE-6310",
+"Test Description":"Checking /tmp, /home and /var directory",
+"Detail":[
+{" - Checking /home mount point":"OK"}
+,
+{" - Checking /tmp mount point":"SUGGESTION"}
+,
+{" - Checking /var mount point":"SUGGESTION"}
+]},
+{"Test No":"FILE-6311",
+"Test Description":"Checking LVM volume groups",
+"Detail":[
+]},
+{"Test No":"FILE-6312",
+"Test Description":"Checking LVM volumes",
+"Detail":[
+]},
+{"Test No":"FILE-6323",
+"Test Description":"Checking EXT file systems",
+"Detail":[
+]},
+{"Test No":"FILE-6324",
+"Test Description":"Checking XFS file systems",
+"Detail":[
+]},
+{"Test No":"FILE-6329",
+"Test Description":"Checking FFS/UFS file systems",
+"Detail":[
+]},
+{"Test No":"FILE-6330",
+"Test Description":"Checking ZFS file systems",
+"Detail":[
+]},
+{"Test No":"FILE-6439",
+"Test Description":"Checking HAMMER PFS mounts",
+"Detail":[
+]},
+{"Test No":"FILE-6332",
+"Test Description":"Checking swap partitions",
+"Detail":[
+{" - Query swap partitions (fstab)":"NONE"}
+]},
+{"Test No":"FILE-6336",
+"Test Description":"Checking swap mount options",
+"Detail":[
+{" - Testing swap partitions":"OK"}
+]},
+{"Test No":"FILE-6344",
+"Test Description":"Checking proc mount options",
+"Detail":[
+{" - Testing /proc mount (hidepid)":"SUGGESTION"}
+]},
+{"Test No":"FILE-6354",
+"Test Description":"Searching for old files in /tmp",
+"Detail":[
+{" - Checking for old files in /tmp":"OK"}
+]},
+{"Test No":"FILE-6362",
+"Test Description":"Checking /tmp sticky bit",
+"Detail":[
+{" - Checking /tmp sticky bit":"OK"}
+]},
+{"Test No":"FILE-6363",
+"Test Description":"Checking /var/tmp sticky bit",
+"Detail":[
+{" - Checking /var/tmp sticky bit":"OK"}
+]},
+{"Test No":"FILE-6368",
+"Test Description":"Checking ACL support on root file system",
+"Detail":[
+{" - ACL support root file system":"ENABLED"}
+]},
+{"Test No":"FILE-6372",
+"Test Description":"Checking / mount options",
+"Detail":[
+]},
+{"Test No":"FILE-6374",
+"Test Description":"Linux mount options",
+"Detail":[
+{" - Mount options of /dev":"PARTIALLY HARDENED"}
+,
+{" - Mount options of /dev/shm":"HARDENED"}
+,
+{" - Mount options of /home":"NON DEFAULT"}
+]},
+{"Test No":"FILE-6376",
+"Test Description":"Determine if /var/tmp is bound to /tmp",
+"Detail":[
+]},
+{"Test No":"FILE-6394",
+"Test Description":"Determine level of swappiness.",
+"Detail":[
+]},
+{"Test No":"FILE-6410",
+"Test Description":"Checking Locate database",
+"Detail":[
+]},
+{"Test No":"FILE-6430",
+"Test Description":"Disable mounting of some filesystems",
+"Detail":[
+]}]}
+,
+{
+"Name":"USB Devices",
+"Tests":[
+{"Test No":"USB-1000",
+"Test Description":"Check if USB storage is disabled",
+"Detail":[
+{" - Checking usb-storage driver (modprobe config)":"NOT DISABLED"}
+]},
+{"Test No":"USB-2000",
+"Test Description":"Check USB authorizations",
+"Detail":[
+{" - Checking USB devices authorization":"ENABLED"}
+]},
+{"Test No":"USB-3000",
+"Test Description":"Check for presence of USBGuard",
+"Detail":[
+{" - Checking USBGuard":"NOT FOUND"}
+]}]}
+,
+{
+"Name":"Storage",
+"Tests":[
+{"Test No":"STRG-1846",
+"Test Description":"Check if firewire storage is disabled",
+"Detail":[
+{" - Checking firewire ohci driver (modprobe config)":"NOT DISABLED"}
+]}]}
+,
+{
+"Name":"NFS",
+"Tests":[
+{"Test No":"STRG-1902",
+"Test Description":"Check rpcinfo registered programs",
+"Detail":[
+]},
+{"Test No":"STRG-1904",
+"Test Description":"Check nfs rpc",
+"Detail":[
+]},
+{"Test No":"STRG-1906",
+"Test Description":"Check nfs rpc",
+"Detail":[
+]},
+{"Test No":"STRG-1920",
+"Test Description":"Checking NFS daemon",
+"Detail":[
+{" - Check running NFS daemon":"NOT FOUND"}
+]},
+{"Test No":"STRG-1926",
+"Test Description":"Checking NFS exports",
+"Detail":[
+]},
+{"Test No":"STRG-1928",
+"Test Description":"Checking empty /etc/exports",
+"Detail":[
+]},
+{"Test No":"STRG-1930",
+"Test Description":"Check client access to nfs share",
+"Detail":[
+]}]}
+,
+{
+"Name":"Name services",
+"Tests":[
+{"Test No":"NAME-4016",
+"Test Description":"Check /etc/resolv.conf default domain",
+"Detail":[
+]},
+{"Test No":"NAME-4018",
+"Test Description":"Check /etc/resolv.conf search domains",
+"Detail":[
+]},
+{"Test No":"NAME-4020",
+"Test Description":"Check non default options",
+"Detail":[
+]},
+{"Test No":"NAME-4024",
+"Test Description":"Solaris uname -n output",
+"Detail":[
+]},
+{"Test No":"NAME-4026",
+"Test Description":"Check /etc/nodename",
+"Detail":[
+]},
+{"Test No":"NAME-4028",
+"Test Description":"Check domain name",
+"Detail":[
+{" - Searching DNS domain name":"UNKNOWN"}
+]},
+{"Test No":"NAME-4032",
+"Test Description":"Check nscd status",
+"Detail":[
+]},
+{"Test No":"NAME-4034",
+"Test Description":"Check Unbound status",
+"Detail":[
+]},
+{"Test No":"NAME-4036",
+"Test Description":"Check Unbound configuration file",
+"Detail":[
+]},
+{"Test No":"NAME-4202",
+"Test Description":"Check BIND status",
+"Detail":[
+]},
+{"Test No":"NAME-4204",
+"Test Description":"Search BIND configuration file",
+"Detail":[
+]},
+{"Test No":"NAME-4206",
+"Test Description":"Check BIND configuration consistency",
+"Detail":[
+]},
+{"Test No":"NAME-4210",
+"Test Description":"Check DNS banner",
+"Detail":[
+]},
+{"Test No":"NAME-4230",
+"Test Description":"Check PowerDNS status",
+"Detail":[
+]},
+{"Test No":"NAME-4232",
+"Test Description":"Search PowerDNS configuration file",
+"Detail":[
+]},
+{"Test No":"NAME-4236",
+"Test Description":"Check PowerDNS backends",
+"Detail":[
+]},
+{"Test No":"NAME-4238",
+"Test Description":"Check PowerDNS authoritative status",
+"Detail":[
+]},
+{"Test No":"NAME-4304",
+"Test Description":"Check NIS ypbind status",
+"Detail":[
+]},
+{"Test No":"NAME-4306",
+"Test Description":"Check NIS domain",
+"Detail":[
+]},
+{"Test No":"NAME-4402",
+"Test Description":"Check duplicate line in /etc/hosts",
+"Detail":[
+{" - Duplicate entries in hosts file":"NONE"}
+]},
+{"Test No":"NAME-4404",
+"Test Description":"Check /etc/hosts contains an entry for this server name",
+"Detail":[
+{" - Presence of configured hostname in /etc/hosts":"FOUND"}
+]},
+{"Test No":"NAME-4406",
+"Test Description":"Check server hostname mapping",
+"Detail":[
+{" - Hostname mapped to localhost":"NOT FOUND"}
+]},
+{"Test No":"NAME-4408",
+"Test Description":"Check localhost entry",
+"Detail":[
+{" - Localhost mapping to IP address":"OK"}
+]}]}
+,
+{
+"Name":"Ports and packages",
+"Tests":[
+{"Test No":"PKGS-7301",
+"Test Description":"Query FreeBSD pkg",
+"Detail":[
+]},
+{"Test No":"PKGS-7302",
+"Test Description":"Query FreeBSD/NetBSD pkg_info",
+"Detail":[
+]},
+{"Test No":"PKGS-7303",
+"Test Description":"Query brew package manager",
+"Detail":[
+]},
+{"Test No":"PKGS-7304",
+"Test Description":"Querying Gentoo packages",
+"Detail":[
+]},
+{"Test No":"PKGS-7306",
+"Test Description":"Querying Solaris packages",
+"Detail":[
+]},
+{"Test No":"PKGS-7308",
+"Test Description":"Checking package list with RPM",
+"Detail":[
+]},
+{"Test No":"PKGS-7310",
+"Test Description":"Checking package list with pacman",
+"Detail":[
+]},
+{"Test No":"PKGS-7312",
+"Test Description":"Checking available updates for pacman based system",
+"Detail":[
+]},
+{"Test No":"PKGS-7314",
+"Test Description":"Checking pacman configuration options",
+"Detail":[
+]},
+{"Test No":"PKGS-7320",
+"Test Description":"Checking for arch-audit tooling",
+"Detail":[
+]},
+{"Test No":"PKGS-7322",
+"Test Description":"Discover vulnerable packages with arch-audit",
+"Detail":[
+]},
+{"Test No":"PKGS-7328",
+"Test Description":"Querying Zypper for installed packages",
+"Detail":[
+]},
+{"Test No":"PKGS-7330",
+"Test Description":"Querying Zypper for vulnerable packages",
+"Detail":[
+]},
+{"Test No":"PKGS-7332",
+"Test Description":"Query macOS ports",
+"Detail":[
+]},
+{"Test No":"PKGS-7334",
+"Test Description":"Query port for port upgrades",
+"Detail":[
+]},
+{"Test No":"PKGS-7345",
+"Test Description":"Querying dpkg",
+"Detail":[
+{" - Searching dpkg package manager":"FOUND"}
+]},
+{"Test No":"PKGS-7346",
+"Test Description":"Search unpurged packages on system",
+"Detail":[
+{" - Query unpurged packages":"NONE"}
+]},
+{"Test No":"PKGS-7348",
+"Test Description":"Check for old distfiles",
+"Detail":[
+]},
+{"Test No":"PKGS-7350",
+"Test Description":"Checking for installed packages with DNF utility",
+"Detail":[
+]},
+{"Test No":"PKGS-7352",
+"Test Description":"Checking for security updates with DNF utility",
+"Detail":[
+]},
+{"Test No":"PKGS-7354",
+"Test Description":"Checking package database integrity",
+"Detail":[
+]},
+{"Test No":"PKGS-7366",
+"Test Description":"Checking for debsecan utility",
+"Detail":[
+]},
+{"Test No":"PKGS-7370",
+"Test Description":"Checking for debsums utility",
+"Detail":[
+]},
+{"Test No":"PKGS-7378",
+"Test Description":"Query portmaster for port upgrades",
+"Detail":[
+]},
+{"Test No":"PKGS-7380",
+"Test Description":"Check for vulnerable NetBSD packages",
+"Detail":[
+]},
+{"Test No":"PKGS-7381",
+"Test Description":"Check for vulnerable FreeBSD packages with pkg",
+"Detail":[
+]},
+{"Test No":"PKGS-7382",
+"Test Description":"Check for vulnerable FreeBSD packages with portaudit",
+"Detail":[
+]},
+{"Test No":"PKGS-7383",
+"Test Description":"Check for YUM package update management",
+"Detail":[
+]},
+{"Test No":"PKGS-7384",
+"Test Description":"Check for YUM utils package",
+"Detail":[
+]},
+{"Test No":"PKGS-7386",
+"Test Description":"Check for YUM security package",
+"Detail":[
+]},
+{"Test No":"PKGS-7387",
+"Test Description":"Check for GPG signing in YUM security package",
+"Detail":[
+]},
+{"Test No":"PKGS-7388",
+"Test Description":"Check security repository in apt sources.list file",
+"Detail":[
+{" - Checking security repository in sources.list file":"OK"}
+]},
+{"Test No":"PKGS-7390",
+"Test Description":"Check Ubuntu database consistency",
+"Detail":[
+{" - Checking APT package database":"OK"}
+]},
+{"Test No":"PKGS-7392",
+"Test Description":"Check for Debian/Ubuntu security updates",
+"Detail":[
+{" - Checking vulnerable packages":"WARNING"}
+]},
+{"Test No":"PKGS-7393",
+"Test Description":"Check for Gentoo vulnerable packages",
+"Detail":[
+]},
+{"Test No":"PKGS-7394",
+"Test Description":"Check for Ubuntu updates",
+"Detail":[
+{" - Checking upgradeable packages":"SKIPPED"}
+]},
+{"Test No":"PKGS-7398",
+"Test Description":"Check for package audit tool",
+"Detail":[
+{" - Checking package audit tool":"INSTALLED"}
+]},
+{"Test No":"PKGS-7410",
+"Test Description":"Count installed kernel packages",
+"Detail":[
+]},
+{"Test No":"PKGS-7420",
+"Test Description":"Detect toolkit to automatically download and apply upgrades",
+"Detail":[
+{" - Toolkit for automatic upgrades":"NOT FOUND"}
+]}]}
+,
+{
+"Name":"Networking",
+"Tests":[
+{"Test No":"NETW-2400",
+"Test Description":"Hostname length and value check",
+"Detail":[
+]},
+{"Test No":"NETW-2600",
+"Test Description":"Checking IPv6 configuration",
+"Detail":[
+{" - Checking IPv6 configuration":"ENABLED"}
+,
+{" Configuration method":"AUTO"}
+,
+{" IPv6 only":"NO"}
+]},
+{"Test No":"NETW-2704",
+"Test Description":"Basic nameserver configuration tests",
+"Detail":[
+{" Nameserver: 8.8.8.8":"SKIPPED"}
+,
+{" Nameserver: 8.8.4.4":"SKIPPED"}
+]},
+{"Test No":"NETW-2705",
+"Test Description":"Check availability two nameservers",
+"Detail":[
+{" - Minimal of 2 responsive nameservers":"SKIPPED"}
+]},
+{"Test No":"NETW-2706",
+"Test Description":"Check systemd-resolved and upstream DNSSEC status",
+"Detail":[
+{" - DNSSEC supported (systemd-resolved)":"UNKNOWN"}
+]},
+{"Test No":"NETW-3001",
+"Test Description":"Find default gateway (route)",
+"Detail":[
+]},
+{"Test No":"NETW-3004",
+"Test Description":"Search for available network interfaces",
+"Detail":[
+]},
+{"Test No":"NETW-3006",
+"Test Description":"Get network MAC addresses",
+"Detail":[
+]},
+{"Test No":"NETW-3008",
+"Test Description":"Get network IP addresses",
+"Detail":[
+]},
+{"Test No":"NETW-3012",
+"Test Description":"Check listening ports",
+"Detail":[
+{" - Getting listening ports (TCP/UDP)":"SKIPPED"}
+]},
+{"Test No":"NETW-3014",
+"Test Description":"Checking promiscuous interfaces (BSD)",
+"Detail":[
+]},
+{"Test No":"NETW-3015",
+"Test Description":"Checking promiscuous interfaces (Linux)",
+"Detail":[
+{" - Checking promiscuous interfaces":"UNKNOWN"}
+]},
+{"Test No":"NETW-3028",
+"Test Description":"Checking connections in WAIT state",
+"Detail":[
+]},
+{"Test No":"NETW-3030",
+"Test Description":"Checking DHCP client status",
+"Detail":[
+]},
+{"Test No":"NETW-3032",
+"Test Description":"Checking for ARP monitoring software",
+"Detail":[
+{" - Checking for ARP monitoring software":"NOT FOUND"}
+]},
+{"Test No":"NETW-3200",
+"Test Description":"Determine available network protocols",
+"Detail":[
+{" - Uncommon network protocols":"0"}
+]}]}
+,
+{
+"Name":"Printers and Spools",
+"Tests":[
+{"Test No":"PRNT-2302",
+"Test Description":"Check for printcap consistency",
+"Detail":[
+]},
+{"Test No":"PRNT-2304",
+"Test Description":"Check cupsd status",
+"Detail":[
+{" - Checking cups daemon":"NOT FOUND"}
+]},
+{"Test No":"PRNT-2306",
+"Test Description":"Check CUPSd configuration file",
+"Detail":[
+]},
+{"Test No":"PRNT-2307",
+"Test Description":"Check CUPSd configuration file permissions",
+"Detail":[
+]},
+{"Test No":"PRNT-2308",
+"Test Description":"Check CUPSd network configuration",
+"Detail":[
+]},
+{"Test No":"PRNT-2314",
+"Test Description":"Check lpd status",
+"Detail":[
+{" - Checking lp daemon":"NOT RUNNING"}
+]},
+{"Test No":"PRNT-2316",
+"Test Description":"Checking /etc/qconfig file",
+"Detail":[
+]},
+{"Test No":"PRNT-2418",
+"Test Description":"Checking qdaemon printer spooler status",
+"Detail":[
+]},
+{"Test No":"PRNT-2420",
+"Test Description":"Checking old print jobs",
+"Detail":[
+]}]}
+,
+{
+"Name":"Software: e-mail and messaging",
+"Tests":[
+{"Test No":"MAIL-8802",
+"Test Description":"Check Exim status",
+"Detail":[
+]},
+{"Test No":"MAIL-8804",
+"Test Description":"Exim configuration options",
+"Detail":[
+]},
+{"Test No":"MAIL-8814",
+"Test Description":"Check postfix process status",
+"Detail":[
+]},
+{"Test No":"MAIL-8816",
+"Test Description":"Check Postfix configuration",
+"Detail":[
+]},
+{"Test No":"MAIL-8817",
+"Test Description":"Check Postfix configuration errors",
+"Detail":[
+]},
+{"Test No":"MAIL-8818",
+"Test Description":"Check Postfix configuration: banner",
+"Detail":[
+]},
+{"Test No":"MAIL-8820",
+"Test Description":"Postfix configuration scan",
+"Detail":[
+]},
+{"Test No":"MAIL-8838",
+"Test Description":"Check dovecot process",
+"Detail":[
+]},
+{"Test No":"MAIL-8860",
+"Test Description":"Check Qmail status",
+"Detail":[
+]},
+{"Test No":"MAIL-8880",
+"Test Description":"Check Sendmail status",
+"Detail":[
+]},
+{"Test No":"MAIL-8920",
+"Test Description":"Check OpenSMTPD status",
+"Detail":[
+]}]}
+,
+{
+"Name":"Software: firewalls",
+"Tests":[
+{"Test No":"FIRE-4502",
+"Test Description":"Check iptables kernel module",
+"Detail":[
+{" - Checking iptables support":"FOUND"}
+]},
+{"Test No":"FIRE-4508",
+"Test Description":"Check used policies of iptables chains",
+"Detail":[
+]},
+{"Test No":"FIRE-4512",
+"Test Description":"Check iptables for empty ruleset",
+"Detail":[
+]},
+{"Test No":"FIRE-4513",
+"Test Description":"Check iptables for unused rules",
+"Detail":[
+]},
+{"Test No":"FIRE-4518",
+"Test Description":"Check pf firewall components",
+"Detail":[
+]},
+{"Test No":"FIRE-4520",
+"Test Description":"Check pf configuration consistency",
+"Detail":[
+]},
+{"Test No":"FIRE-4524",
+"Test Description":"Check for CSF presence",
+"Detail":[
+]},
+{"Test No":"FIRE-4526",
+"Test Description":"Check ipf status",
+"Detail":[
+]},
+{"Test No":"FIRE-4530",
+"Test Description":"Check IPFW status",
+"Detail":[
+]},
+{"Test No":"FIRE-4532",
+"Test Description":"Check macOS application firewall",
+"Detail":[
+]},
+{"Test No":"FIRE-4534",
+"Test Description":"Check for presence of outbound firewalls on macOS",
+"Detail":[
+]},
+{"Test No":"FIRE-4536",
+"Test Description":"Check nftables status",
+"Detail":[
+]},
+{"Test No":"FIRE-4538",
+"Test Description":"Check nftables basic configuration",
+"Detail":[
+]},
+{"Test No":"FIRE-4540",
+"Test Description":"Check for empty nftables configuration",
+"Detail":[
+]},
+{"Test No":"FIRE-4586",
+"Test Description":"Check firewall logging",
+"Detail":[
+]},
+{"Test No":"FIRE-4590",
+"Test Description":"Check firewall status",
+"Detail":[
+{" - Checking host based firewall":"ACTIVE"}
+]},
+{"Test No":"FIRE-4594",
+"Test Description":"Check for APF presence",
+"Detail":[
+]}]}
+,
+{
+"Name":"Software: webserver",
+"Tests":[
+{"Test No":"HTTP-6622",
+"Test Description":"Checking Apache presence",
+"Detail":[
+{" - Checking Apache":"NOT FOUND"}
+]},
+{"Test No":"HTTP-6624",
+"Test Description":"Testing main Apache configuration file",
+"Detail":[
+]},
+{"Test No":"HTTP-6626",
+"Test Description":"Testing other Apache configuration file",
+"Detail":[
+]},
+{"Test No":"HTTP-6632",
+"Test Description":"Determining all available Apache modules",
+"Detail":[
+]},
+{"Test No":"HTTP-6640",
+"Test Description":"Determining existence of specific Apache modules",
+"Detail":[
+]},
+{"Test No":"HTTP-6641",
+"Test Description":"Determining existence of specific Apache modules",
+"Detail":[
+]},
+{"Test No":"HTTP-6643",
+"Test Description":"Determining existence of specific Apache modules",
+"Detail":[
+]},
+{"Test No":"HTTP-6702",
+"Test Description":"Check nginx process",
+"Detail":[
+{" - Checking nginx":"NOT FOUND"}
+]},
+{"Test No":"HTTP-6704",
+"Test Description":"Check nginx configuration file",
+"Detail":[
+]},
+{"Test No":"HTTP-6706",
+"Test Description":"Check for additional nginx configuration files",
+"Detail":[
+]},
+{"Test No":"HTTP-6708",
+"Test Description":"Check discovered nginx configuration settings",
+"Detail":[
+]},
+{"Test No":"HTTP-6710",
+"Test Description":"Check nginx SSL configuration settings",
+"Detail":[
+]},
+{"Test No":"HTTP-6712",
+"Test Description":"Check nginx access logging",
+"Detail":[
+]},
+{"Test No":"HTTP-6714",
+"Test Description":"Check for missing error logs in nginx",
+"Detail":[
+]},
+{"Test No":"HTTP-6716",
+"Test Description":"Check for debug mode on error log in nginx",
+"Detail":[
+]},
+{"Test No":"HTTP-6720",
+"Test Description":"Check Nginx log files",
+"Detail":[
+]}]}
+,
+{
+"Name":"SSH Support",
+"Tests":[
+{"Test No":"SSH-7402",
+"Test Description":"Check for running SSH daemon",
+"Detail":[
+{" - Checking running SSH daemon":"FOUND"}
+]},
+{"Test No":"SSH-7404",
+"Test Description":"Check SSH daemon file location",
+"Detail":[
+{" - Searching SSH configuration":"FOUND"}
+]},
+{"Test No":"SSH-7406",
+"Test Description":"Determine OpenSSH version",
+"Detail":[
+]},
+{"Test No":"SSH-7408",
+"Test Description":"Check SSH specific defined options",
+"Detail":[
+{" - OpenSSH option: AllowTcpForwarding":"SUGGESTION"}
+,
+{" - OpenSSH option: ClientAliveCountMax":"SUGGESTION"}
+,
+{" - OpenSSH option: ClientAliveInterval":"OK"}
+,
+{" - OpenSSH option: Compression":"SUGGESTION"}
+,
+{" - OpenSSH option: FingerprintHash":"OK"}
+,
+{" - OpenSSH option: GatewayPorts":"OK"}
+,
+{" - OpenSSH option: IgnoreRhosts":"OK"}
+,
+{" - OpenSSH option: LoginGraceTime":"OK"}
+,
+{" - OpenSSH option: LogLevel":"SUGGESTION"}
+,
+{" - OpenSSH option: MaxAuthTries":"SUGGESTION"}
+,
+{" - OpenSSH option: MaxSessions":"SUGGESTION"}
+,
+{" - OpenSSH option: PermitRootLogin":"OK"}
+,
+{" - OpenSSH option: PermitUserEnvironment":"OK"}
+,
+{" - OpenSSH option: PermitTunnel":"OK"}
+,
+{" - OpenSSH option: Port":"SUGGESTION"}
+,
+{" - OpenSSH option: PrintLastLog":"OK"}
+,
+{" - OpenSSH option: StrictModes":"OK"}
+,
+{" - OpenSSH option: TCPKeepAlive":"SUGGESTION"}
+,
+{" - OpenSSH option: UseDNS":"OK"}
+,
+{" - OpenSSH option: X11Forwarding":"SUGGESTION"}
+,
+{" - OpenSSH option: AllowAgentForwarding":"SUGGESTION"}
+]},
+{"Test No":"SSH-7440",
+"Test Description":"Check OpenSSH option: AllowUsers and AllowGroups",
+"Detail":[
+{" - OpenSSH option: AllowUsers":"NOT FOUND"}
+,
+{" - OpenSSH option: AllowGroups":"NOT FOUND"}
+]}]}
+,
+{
+"Name":"SNMP Support",
+"Tests":[
+{"Test No":"SNMP-3302",
+"Test Description":"Check for running SNMP daemon",
+"Detail":[
+{" - Checking running SNMP daemon":"NOT FOUND"}
+]},
+{"Test No":"SNMP-3304",
+"Test Description":"Check SNMP daemon file location",
+"Detail":[
+]},
+{"Test No":"SNMP-3306",
+"Test Description":"Check SNMP communities",
+"Detail":[
+]}]}
+,
+{
+"Name":"Databases",
+"Tests":[
+{"Test No":"DBS-1804",
+"Test Description":"Checking active MySQL process",
+"Detail":[
+]},
+{"Test No":"DBS-1816",
+"Test Description":"Checking MySQL root password",
+"Detail":[
+]},
+{"Test No":"DBS-1818",
+"Test Description":"Check status of MongoDB server",
+"Detail":[
+]},
+{"Test No":"DBS-1820",
+"Test Description":"Check for authorization in MongoDB",
+"Detail":[
+]},
+{"Test No":"DBS-1826",
+"Test Description":"Checking active PostgreSQL processes",
+"Detail":[
+]},
+{"Test No":"DBS-1828",
+"Test Description":"Test PostgreSQL configuration",
+"Detail":[
+]},
+{"Test No":"DBS-1840",
+"Test Description":"Checking active Oracle processes",
+"Detail":[
+]},
+{"Test No":"DBS-1860",
+"Test Description":"Checking active DB2 instances",
+"Detail":[
+]},
+{"Test No":"DBS-1880",
+"Test Description":"Check for active Redis server",
+"Detail":[
+]},
+{"Test No":"DBS-1882",
+"Test Description":"Redis configuration file",
+"Detail":[
+]},
+{"Test No":"DBS-1884",
+"Test Description":"Redis: requirepass option configured",
+"Detail":[
+]},
+{"Test No":"DBS-1886",
+"Test Description":"Redis: rename-command CONFIG used",
+"Detail":[
+]},
+{"Test No":"DBS-1888",
+"Test Description":"Redis: bind on localhost",
+"Detail":[
+]}]}
+,
+{
+"Name":"LDAP Services",
+"Tests":[
+{"Test No":"LDAP-2219",
+"Test Description":"Check running OpenLDAP instance",
+"Detail":[
+{" - Checking OpenLDAP instance":"NOT FOUND"}
+]},
+{"Test No":"LDAP-2224",
+"Test Description":"Check presence slapd.conf",
+"Detail":[
+]}]}
+,
+{
+"Name":"PHP",
+"Tests":[
+{"Test No":"PHP-2211",
+"Test Description":"Check php.ini presence",
+"Detail":[
+{" - Checking PHP":"NOT FOUND"}
+]},
+{"Test No":"PHP-2320",
+"Test Description":"Check PHP disabled functions",
+"Detail":[
+]},
+{"Test No":"PHP-2368",
+"Test Description":"Check PHP register_globals option",
+"Detail":[
+]},
+{"Test No":"PHP-2372",
+"Test Description":"Check PHP expose_php option",
+"Detail":[
+]},
+{"Test No":"PHP-2374",
+"Test Description":"Check PHP enable_dl option",
+"Detail":[
+]},
+{"Test No":"PHP-2376",
+"Test Description":"Check PHP allow_url_fopen option",
+"Detail":[
+]},
+{"Test No":"PHP-2378",
+"Test Description":"Check PHP allow_url_include option",
+"Detail":[
+]},
+{"Test No":"PHP-2382",
+"Test Description":"Check PHP expose_php option",
+"Detail":[
+]}]}
+,
+{
+"Name":"Squid Support",
+"Tests":[
+{"Test No":"SQD-3602",
+"Test Description":"Check for running Squid daemon",
+"Detail":[
+{" - Checking running Squid daemon":"NOT FOUND"}
+]},
+{"Test No":"SQD-3604",
+"Test Description":"Check Squid daemon file location",
+"Detail":[
+]},
+{"Test No":"SQD-3606",
+"Test Description":"Check Squid version",
+"Detail":[
+]},
+{"Test No":"SQD-3610",
+"Test Description":"Gather Squid settings",
+"Detail":[
+]},
+{"Test No":"SQD-3613",
+"Test Description":"Check Squid file permissions",
+"Detail":[
+]},
+{"Test No":"SQD-3614",
+"Test Description":"Check Squid authentication methods",
+"Detail":[
+]},
+{"Test No":"SQD-3616",
+"Test Description":"Check external Squid authentication",
+"Detail":[
+]},
+{"Test No":"SQD-3620",
+"Test Description":"Check Squid access control lists",
+"Detail":[
+]},
+{"Test No":"SQD-3624",
+"Test Description":"Check Squid safe ports",
+"Detail":[
+]},
+{"Test No":"SQD-3630",
+"Test Description":"Check Squid reply_body_max_size option",
+"Detail":[
+]},
+{"Test No":"SQD-3680",
+"Test Description":"Check Squid version suppression",
+"Detail":[
+]}]}
+,
+{
+"Name":"Logging and files",
+"Tests":[
+{"Test No":"LOGG-2130",
+"Test Description":"Check for running syslog daemon",
+"Detail":[
+{" - Checking for a running log daemon":"WARNING"}
+]},
+{"Test No":"LOGG-2132",
+"Test Description":"Check for running syslog-ng daemon",
+"Detail":[
+{" - Checking Syslog-NG status":"NOT FOUND"}
+]},
+{"Test No":"LOGG-2134",
+"Test Description":"Checking Syslog-NG configuration file consistency",
+"Detail":[
+]},
+{"Test No":"LOGG-2136",
+"Test Description":"Check for running systemd journal daemon",
+"Detail":[
+{" - Checking systemd journal status":"NOT FOUND"}
+]},
+{"Test No":"LOGG-2210",
+"Test Description":"Check for running metalog daemon",
+"Detail":[
+{" - Checking Metalog status":"NOT FOUND"}
+]},
+{"Test No":"LOGG-2230",
+"Test Description":"Check for running RSyslog daemon",
+"Detail":[
+{" - Checking RSyslog status":"NOT FOUND"}
+]},
+{"Test No":"LOGG-2240",
+"Test Description":"Check for running RFC 3195 compliant daemon",
+"Detail":[
+{" - Checking RFC 3195 daemon status":"NOT FOUND"}
+]},
+{"Test No":"LOGG-2138",
+"Test Description":"Checking kernel logger daemon on Linux",
+"Detail":[
+{" - Checking klogd":"NOT FOUND"}
+]},
+{"Test No":"LOGG-2142",
+"Test Description":"Checking minilog daemon",
+"Detail":[
+{" - Checking minilogd instances":"NOT FOUND"}
+]},
+{"Test No":"LOGG-2146",
+"Test Description":"Checking logrotate.conf and logrotate.d",
+"Detail":[
+{" - Checking logrotate presence":"OK"}
+]},
+{"Test No":"LOGG-2148",
+"Test Description":"Checking logrotated files",
+"Detail":[
+]},
+{"Test No":"LOGG-2150",
+"Test Description":"Checking directories in logrotate configuration",
+"Detail":[
+]},
+{"Test No":"LOGG-2152",
+"Test Description":"Checking loghost",
+"Detail":[
+]},
+{"Test No":"LOGG-2153",
+"Test Description":"Checking loghost is localhost",
+"Detail":[
+]},
+{"Test No":"LOGG-2154",
+"Test Description":"Checking syslog configuration file",
+"Detail":[
+]},
+{"Test No":"LOGG-2160",
+"Test Description":"Checking /etc/newsyslog.conf",
+"Detail":[
+]},
+{"Test No":"LOGG-2162",
+"Test Description":"Checking directories in /etc/newsyslog.conf",
+"Detail":[
+]},
+{"Test No":"LOGG-2164",
+"Test Description":"Checking files specified /etc/newsyslog.conf",
+"Detail":[
+]},
+{"Test No":"LOGG-2170",
+"Test Description":"Checking log paths",
+"Detail":[
+{" - Checking log directories (static list)":"DONE"}
+]},
+{"Test No":"LOGG-2180",
+"Test Description":"Checking open log files",
+"Detail":[
+{" - Checking open log files":"SKIPPED"}
+]},
+{"Test No":"LOGG-2190",
+"Test Description":"Checking for deleted files in use",
+"Detail":[
+]},
+{"Test No":"LOGG-2192",
+"Test Description":"Checking for open log files that are empty",
+"Detail":[
+]}]}
+,
+{
+"Name":"Insecure services",
+"Tests":[
+{"Test No":"INSE-8000",
+"Test Description":"Installed inetd package",
+"Detail":[
+{" - Installed inetd package":"NOT FOUND"}
+]},
+{"Test No":"INSE-8002",
+"Test Description":"Check for enabled inet daemon",
+"Detail":[
+]},
+{"Test No":"INSE-8004",
+"Test Description":"Presence of inetd configuration file",
+"Detail":[
+]},
+{"Test No":"INSE-8006",
+"Test Description":"Check configuration of inetd when disabled",
+"Detail":[
+]},
+{"Test No":"INSE-8016",
+"Test Description":"Check for telnet via inetd",
+"Detail":[
+]},
+{"Test No":"INSE-8100",
+"Test Description":"Check for installed xinetd daemon",
+"Detail":[
+{" - Installed xinetd package":"OK"}
+]},
+{"Test No":"INSE-8102",
+"Test Description":"Check for active xinet daemon",
+"Detail":[
+]},
+{"Test No":"INSE-8104",
+"Test Description":"Check for enabled xinet daemon",
+"Detail":[
+]},
+{"Test No":"INSE-8106",
+"Test Description":"Check configuration of xinetd when disabled",
+"Detail":[
+]},
+{"Test No":"INSE-8116",
+"Test Description":"Insecure services enabled via xinetd",
+"Detail":[
+]},
+{"Test No":"INSE-8200",
+"Test Description":"Check if tcp_wrappers is installed when inetd/xinetd is active",
+"Detail":[
+]},
+{"Test No":"INSE-8300",
+"Test Description":"Check if rsh client is installed",
+"Detail":[
+{" - Installed rsh client package":"OK"}
+]},
+{"Test No":"INSE-8304",
+"Test Description":"Check if rsh server is installed",
+"Detail":[
+{" - Installed rsh server package":"OK"}
+]},
+{"Test No":"INSE-8310",
+"Test Description":"Check if telnet client is installed",
+"Detail":[
+{" - Installed telnet client package":"OK"}
+]},
+{"Test No":"INSE-8322",
+"Test Description":"Check if telnet server is installed",
+"Detail":[
+{" - Installed telnet server package":"NOT FOUND"}
+]},
+{"Test No":"INSE-8314",
+"Test Description":"Check if NIS client is installed",
+"Detail":[
+{" - Checking NIS client installation":"OK"}
+]},
+{"Test No":"INSE-8316",
+"Test Description":"Check if NIS server is installed",
+"Detail":[
+{" - Checking NIS server installation":"OK"}
+]},
+{"Test No":"INSE-8318",
+"Test Description":"Check if TFTP client is installed",
+"Detail":[
+{" - Checking TFTP client installation":"OK"}
+]},
+{"Test No":"INSE-8320",
+"Test Description":"Check if TFTP server is installed",
+"Detail":[
+{" - Checking TFTP server installation":"OK"}
+]},
+{"Test No":"INSE-8050",
+"Test Description":"Check for insecure services on macOS",
+"Detail":[
+]}]}
+,
+{
+"Name":"Banners and identification",
+"Tests":[
+{"Test No":"BANN-7113",
+"Test Description":"Check COPYRIGHT banner file",
+"Detail":[
+]},
+{"Test No":"BANN-7124",
+"Test Description":"Check issue banner file",
+"Detail":[
+{" - /etc/issue":"FOUND"}
+]},
+{"Test No":"BANN-7126",
+"Test Description":"Check issue banner file contents",
+"Detail":[
+{" - /etc/issue contents":"WEAK"}
+]},
+{"Test No":"BANN-7128",
+"Test Description":"Check issue.net banner file",
+"Detail":[
+{" - /etc/issue.net":"FOUND"}
+]},
+{"Test No":"BANN-7130",
+"Test Description":"Check issue.net banner file contents",
+"Detail":[
+{" - /etc/issue.net contents":"WEAK"}
+]}]}
+,
+{
+"Name":"Scheduled tasks",
+"Tests":[
+{"Test No":"SCHD-7702",
+"Test Description":"Check status of cron daemon",
+"Detail":[
+]},
+{"Test No":"SCHD-7704",
+"Test Description":"Check crontab/cronjobs",
+"Detail":[
+{" - Checking crontab and cronjob files":"DONE"}
+]},
+{"Test No":"SCHD-7718",
+"Test Description":"Check at users",
+"Detail":[
+]},
+{"Test No":"SCHD-7720",
+"Test Description":"Check at users",
+"Detail":[
+]},
+{"Test No":"SCHD-7724",
+"Test Description":"Check at jobs",
+"Detail":[
+]}]}
+,
+{
+"Name":"Accounting",
+"Tests":[
+{"Test No":"ACCT-2754",
+"Test Description":"Check for available FreeBSD accounting information",
+"Detail":[
+]},
+{"Test No":"ACCT-2760",
+"Test Description":"Check for available OpenBSD accounting information",
+"Detail":[
+]},
+{"Test No":"ACCT-9622",
+"Test Description":"Check for available Linux accounting information",
+"Detail":[
+{" - Checking accounting information":"NOT FOUND"}
+]},
+{"Test No":"ACCT-9626",
+"Test Description":"Check for sysstat accounting data",
+"Detail":[
+{" - Checking sysstat accounting data":"NOT FOUND"}
+]},
+{"Test No":"ACCT-9628",
+"Test Description":"Check for auditd",
+"Detail":[
+{" - Checking auditd":"NOT FOUND"}
+]},
+{"Test No":"ACCT-9630",
+"Test Description":"Check for auditd rules",
+"Detail":[
+]},
+{"Test No":"ACCT-9632",
+"Test Description":"Check for auditd configuration file",
+"Detail":[
+]},
+{"Test No":"ACCT-9634",
+"Test Description":"Check for auditd log file",
+"Detail":[
+]},
+{"Test No":"ACCT-9636",
+"Test Description":"Check for Snoopy wrapper and logger",
+"Detail":[
+]},
+{"Test No":"ACCT-9650",
+"Test Description":"Check Solaris audit daemon",
+"Detail":[
+]},
+{"Test No":"ACCT-9652",
+"Test Description":"Check auditd SMF status",
+"Detail":[
+]},
+{"Test No":"ACCT-9654",
+"Test Description":"Check BSM auditing in /etc/system",
+"Detail":[
+]},
+{"Test No":"ACCT-9656",
+"Test Description":"Check BSM auditing in module list",
+"Detail":[
+]},
+{"Test No":"ACCT-9660",
+"Test Description":"Check location of audit events",
+"Detail":[
+]},
+{"Test No":"ACCT-9662",
+"Test Description":"Check Solaris auditing stats",
+"Detail":[
+]},
+{"Test No":"ACCT-9670",
+"Test Description":"Check for cmd",
+"Detail":[
+]},
+{"Test No":"ACCT-9672",
+"Test Description":"Check for cmd configuration file",
+"Detail":[
+]}]}
+,
+{
+"Name":"Time and Synchronization",
+"Tests":[
+{"Test No":"TIME-3104",
+"Test Description":"Check for running NTP daemon or client",
+"Detail":[
+]},
+{"Test No":"TIME-3106",
+"Test Description":"Check systemd NTP time synchronization status",
+"Detail":[
+]},
+{"Test No":"TIME-3112",
+"Test Description":"Check active NTP associations ID's",
+"Detail":[
+]},
+{"Test No":"TIME-3116",
+"Test Description":"Check peers with stratum value of 16",
+"Detail":[
+]},
+{"Test No":"TIME-3120",
+"Test Description":"Check unreliable NTP peers",
+"Detail":[
+]},
+{"Test No":"TIME-3124",
+"Test Description":"Check selected time source",
+"Detail":[
+]},
+{"Test No":"TIME-3128",
+"Test Description":"Check preferred time source",
+"Detail":[
+]},
+{"Test No":"TIME-3132",
+"Test Description":"Check NTP falsetickers",
+"Detail":[
+]},
+{"Test No":"TIME-3136",
+"Test Description":"Check NTP protocol version",
+"Detail":[
+]},
+{"Test No":"TIME-3148",
+"Test Description":"Check TZ variable",
+"Detail":[
+]},
+{"Test No":"TIME-3160",
+"Test Description":"Check empty NTP step-tickers",
+"Detail":[
+]},
+{"Test No":"TIME-3170",
+"Test Description":"Check configuration files",
+"Detail":[
+]},
+{"Test No":"TIME-3180",
+"Test Description":"Report if ntpctl cannot communicate with OpenNTPD",
+"Detail":[
+]},
+{"Test No":"TIME-3181",
+"Test Description":"Check status of OpenNTPD time synchronisation",
+"Detail":[
+]},
+{"Test No":"TIME-3182",
+"Test Description":"Check OpenNTPD has working peers",
+"Detail":[
+]},
+{"Test No":"TIME-3185",
+"Test Description":"Check systemd-timesyncd synchronized time",
+"Detail":[
+]}]}
+,
+{
+"Name":"Cryptography",
+"Tests":[
+{"Test No":"CRYP-7902",
+"Test Description":"Check expire date of SSL certificates",
+"Detail":[
+{" - Checking for expired SSL certificates [0/131]":"NONE"}
+]},
+{"Test No":"CRYP-7930",
+"Test Description":"Determine if system uses LUKS block device encryption",
+"Detail":[
+]},
+{"Test No":"CRYP-7931",
+"Test Description":"Determine if system uses encrypted swap",
+"Detail":[
+]},
+{"Test No":"CRYP-8002",
+"Test Description":"Gather available kernel entropy",
+"Detail":[
+{" - Kernel entropy is sufficient":"YES"}
+]},
+{"Test No":"CRYP-8004",
+"Test Description":"Presence of hardware random number generators",
+"Detail":[
+{" - HW RNG & rngd":"NO"}
+]},
+{"Test No":"CRYP-8005",
+"Test Description":"Presence of software pseudo random number generators",
+"Detail":[
+{" - SW prng":"NO"}
+]},
+{"Test No":"CRYP-8006",
+"Test Description":"MemoryOverwriteRequest-bit set",
+"Detail":[
+{" - MOR variable not found":"WEAK"}
+]}]}
+,
+{
+"Name":"Containers",
+"Tests":[
+{"Test No":"CONT-8004",
+"Test Description":"Query running Solaris zones",
+"Detail":[
+]},
+{"Test No":"CONT-8102",
+"Test Description":"Checking Docker status and information",
+"Detail":[
+]},
+{"Test No":"CONT-8104",
+"Test Description":"Checking Docker info for any warnings",
+"Detail":[
+]},
+{"Test No":"CONT-8106",
+"Test Description":"Gather basic stats from Docker",
+"Detail":[
+]},
+{"Test No":"CONT-8107",
+"Test Description":"Check number of Docker containers",
+"Detail":[
+]},
+{"Test No":"CONT-8108",
+"Test Description":"Check file permissions for Docker files",
+"Detail":[
+]}]}
+,
+{
+"Name":"Security frameworks",
+"Tests":[
+{"Test No":"MACF-6204",
+"Test Description":"Check AppArmor presence",
+"Detail":[
+{" - Checking presence AppArmor":"NOT FOUND"}
+]},
+{"Test No":"MACF-6208",
+"Test Description":"Check if AppArmor is enabled",
+"Detail":[
+]},
+{"Test No":"MACF-6232",
+"Test Description":"Check SELINUX presence",
+"Detail":[
+{" - Checking presence SELinux":"NOT FOUND"}
+]},
+{"Test No":"MACF-6234",
+"Test Description":"Check SELINUX status",
+"Detail":[
+]},
+{"Test No":"MACF-6240",
+"Test Description":"Check TOMOYO Linux presence",
+"Detail":[
+{" - Checking presence TOMOYO Linux":"NOT FOUND"}
+]},
+{"Test No":"MACF-6242",
+"Test Description":"Check TOMOYO Linux status",
+"Detail":[
+]},
+{"Test No":"RBAC-6272",
+"Test Description":"Check grsecurity presence",
+"Detail":[
+{" - Checking presence grsecurity":"NOT FOUND"}
+]},
+{"Test No":"MACF-6290",
+"Test Description":"Check for implemented MAC framework",
+"Detail":[
+{" - Checking for implemented MAC framework":"NONE"}
+]}]}
+,
+{
+"Name":"Software: file integrity",
+"Tests":[
+{"Test No":"FINT-4310",
+"Test Description":"AFICK availability",
+"Detail":[
+]},
+{"Test No":"FINT-4314",
+"Test Description":"AIDE availability",
+"Detail":[
+]},
+{"Test No":"FINT-4315",
+"Test Description":"Check AIDE configuration file",
+"Detail":[
+]},
+{"Test No":"FINT-4316",
+"Test Description":"Presence of AIDE database and size check",
+"Detail":[
+]},
+{"Test No":"FINT-4318",
+"Test Description":"Osiris availability",
+"Detail":[
+]},
+{"Test No":"FINT-4322",
+"Test Description":"Samhain availability",
+"Detail":[
+]},
+{"Test No":"FINT-4326",
+"Test Description":"Tripwire availability",
+"Detail":[
+]},
+{"Test No":"FINT-4328",
+"Test Description":"OSSEC syscheck daemon running",
+"Detail":[
+]},
+{"Test No":"FINT-4330",
+"Test Description":"mtree availability",
+"Detail":[
+]},
+{"Test No":"FINT-4334",
+"Test Description":"Check lfd daemon status",
+"Detail":[
+]},
+{"Test No":"FINT-4336",
+"Test Description":"Check lfd configuration status",
+"Detail":[
+]},
+{"Test No":"FINT-4338",
+"Test Description":"osqueryd syscheck daemon running",
+"Detail":[
+]},
+{"Test No":"FINT-4339",
+"Test Description":"Check IMA/EVM status",
+"Detail":[
+]},
+{"Test No":"FINT-4340",
+"Test Description":"Check dm-integrity status",
+"Detail":[
+]},
+{"Test No":"FINT-4341",
+"Test Description":"Check dm-verity status",
+"Detail":[
+]},
+{"Test No":"FINT-4402",
+"Test Description":"AIDE configuration: Checksums (SHA256 or SHA512)",
+"Detail":[
+]},
+{"Test No":"FINT-4350",
+"Test Description":"File integrity software installed",
+"Detail":[
+{" - Checking presence integrity tool":"NOT FOUND"}
+]}]}
+,
+{
+"Name":"Software: System tooling",
+"Tests":[
+{"Test No":"TOOL-5002",
+"Test Description":"Checking for automation tools",
+"Detail":[
+{" - Automation tooling":"NOT FOUND"}
+]},
+{"Test No":"TOOL-5102",
+"Test Description":"Check for presence of Fail2ban",
+"Detail":[
+]},
+{"Test No":"TOOL-5104",
+"Test Description":"Enabled tests in Fail2ban",
+"Detail":[
+]},
+{"Test No":"TOOL-5120",
+"Test Description":"Check for presence of Snort",
+"Detail":[
+]},
+{"Test No":"TOOL-5122",
+"Test Description":"Check Snort configuration file",
+"Detail":[
+]},
+{"Test No":"TOOL-5130",
+"Test Description":"Check for active Suricata daemon",
+"Detail":[
+{" - Checking Suricata status":"NOT RUNNING"}
+]},
+{"Test No":"TOOL-5126",
+"Test Description":"Check for active OSSEC daemon",
+"Detail":[
+]},
+{"Test No":"TOOL-5190",
+"Test Description":"Check presence of IDS/IPS tool",
+"Detail":[
+{" - Checking for IDS/IPS tooling":"NONE"}
+]}]}
+,
+{
+"Name":"Software: Malware",
+"Tests":[
+{"Test No":"MALW-3275",
+"Test Description":"Check for chkrootkit",
+"Detail":[
+]},
+{"Test No":"MALW-3276",
+"Test Description":"Check for Rootkit Hunter",
+"Detail":[
+]},
+{"Test No":"MALW-3278",
+"Test Description":"Check for LMD",
+"Detail":[
+]},
+{"Test No":"MALW-3280",
+"Test Description":"Check if anti-virus tool is installed",
+"Detail":[
+]},
+{"Test No":"MALW-3282",
+"Test Description":"Check for clamscan",
+"Detail":[
+]},
+{"Test No":"MALW-3284",
+"Test Description":"Check for clamd",
+"Detail":[
+]},
+{"Test No":"MALW-3286",
+"Test Description":"Check for freshclam",
+"Detail":[
+]},
+{"Test No":"MALW-3288",
+"Test Description":"Check for ClamXav",
+"Detail":[
+]},
+{"Test No":"MALW-3290",
+"Test Description":"Presence of for malware detection",
+"Detail":[
+{" - Malware software components":"NOT FOUND"}
+]}]}
+,
+{
+"Name":"File Permissions",
+"Tests":[
+{"Test No":"FILE-7524",
+"Test Description":"Perform file permissions check",
+"Detail":[
+{" File: /etc/group":"OK"}
+,
+{" File: /etc/group-":"OK"}
+,
+{" File: /etc/hosts.allow":"OK"}
+,
+{" File: /etc/hosts.deny":"OK"}
+,
+{" File: /etc/issue":"OK"}
+,
+{" File: /etc/issue.net":"OK"}
+,
+{" File: /etc/passwd":"OK"}
+,
+{" File: /etc/passwd-":"OK"}
+,
+{" File: /etc/ssh/sshd_config":"SUGGESTION"}
+,
+{" Directory: /root/.ssh":"OK"}
+,
+{" Directory: /etc/cron.d":"SUGGESTION"}
+,
+{" Directory: /etc/cron.daily":"SUGGESTION"}
+,
+{" Directory: /etc/cron.weekly":"SUGGESTION"}
+]}]}
+,
+{
+"Name":"Home directories",
+"Tests":[
+{"Test No":"HOME-9302",
+"Test Description":"Create list with home directories",
+"Detail":[
+]},
+{"Test No":"HOME-9304",
+"Test Description":"Check if users' home directories permissions are 750 or more restrictive",
+"Detail":[
+{" - Permissions of home directories":"WARNING"}
+]},
+{"Test No":"HOME-9306",
+"Test Description":"Check if users own their home directories",
+"Detail":[
+{" - Ownership of home directories":"OK"}
+]},
+{"Test No":"HOME-9310",
+"Test Description":"Checking for suspicious shell history files",
+"Detail":[
+{" - Checking shell history files":"OK"}
+]},
+{"Test No":"HOME-9350",
+"Test Description":"Collecting information from home directories",
+"Detail":[
+]}]}
+,
+{
+"Name":"Kernel Hardening",
+"Tests":[
+{"Test No":"KRNL-6000",
+"Test Description":"Check sysctl key pairs in scan profile",
+"Detail":[
+{" - dev.tty.ldisc_autoload (exp: 0)":"DIFFERENT"}
+,
+{" - fs.protected_fifos (exp: 2)":"DIFFERENT"}
+,
+{" - fs.protected_hardlinks (exp: 1)":"OK"}
+,
+{" - fs.protected_regular (exp: 2)":"DIFFERENT"}
+,
+{" - fs.protected_symlinks (exp: 1)":"OK"}
+,
+{" - fs.suid_dumpable (exp: 0)":"DIFFERENT"}
+,
+{" - kernel.core_uses_pid (exp: 1)":"DIFFERENT"}
+,
+{" - kernel.ctrl-alt-del (exp: 0)":"OK"}
+,
+{" - kernel.dmesg_restrict (exp: 1)":"DIFFERENT"}
+,
+{" - kernel.kptr_restrict (exp: 2)":"DIFFERENT"}
+,
+{" - kernel.modules_disabled (exp: 1)":"DIFFERENT"}
+,
+{" - kernel.perf_event_paranoid (exp: 3)":"OK"}
+,
+{" - kernel.randomize_va_space (exp: 2)":"OK"}
+,
+{" - kernel.sysrq (exp: 0)":"DIFFERENT"}
+,
+{" - kernel.unprivileged_bpf_disabled (exp: 1)":"DIFFERENT"}
+,
+{" - kernel.yama.ptrace_scope (exp: 1 2 3)":"OK"}
+,
+{" - net.ipv4.conf.all.accept_redirects (exp: 0)":"OK"}
+,
+{" - net.ipv4.conf.all.accept_source_route (exp: 0)":"OK"}
+,
+{" - net.ipv4.conf.all.bootp_relay (exp: 0)":"OK"}
+,
+{" - net.ipv4.conf.all.forwarding (exp: 0)":"DIFFERENT"}
+,
+{" - net.ipv4.conf.all.log_martians (exp: 1)":"DIFFERENT"}
+,
+{" - net.ipv4.conf.all.mc_forwarding (exp: 0)":"OK"}
+,
+{" - net.ipv4.conf.all.proxy_arp (exp: 0)":"OK"}
+,
+{" - net.ipv4.conf.all.rp_filter (exp: 1)":"OK"}
+,
+{" - net.ipv4.conf.all.send_redirects (exp: 0)":"DIFFERENT"}
+,
+{" - net.ipv4.conf.default.accept_redirects (exp: 0)":"DIFFERENT"}
+,
+{" - net.ipv4.conf.default.accept_source_route (exp: 0)":"DIFFERENT"}
+,
+{" - net.ipv4.conf.default.log_martians (exp: 1)":"DIFFERENT"}
+,
+{" - net.ipv4.icmp_echo_ignore_broadcasts (exp: 1)":"OK"}
+,
+{" - net.ipv4.icmp_ignore_bogus_error_responses (exp: 1)":"OK"}
+,
+{" - net.ipv4.tcp_syncookies (exp: 1)":"OK"}
+,
+{" - net.ipv4.tcp_timestamps (exp: 0 1)":"OK"}
+,
+{" - net.ipv6.conf.all.accept_redirects (exp: 0)":"DIFFERENT"}
+,
+{" - net.ipv6.conf.all.accept_source_route (exp: 0)":"OK"}
+,
+{" - net.ipv6.conf.default.accept_redirects (exp: 0)":"DIFFERENT"}
+,
+{" - net.ipv6.conf.default.accept_source_route (exp: 0)":"OK"}
+]}]}
+,
+{
+"Name":"Hardening",
+"Tests":[
+{"Test No":"HRDN-7220",
+"Test Description":"Check if one or more compilers are installed",
+"Detail":[
+{" - Installed compiler(s)":"FOUND"}
+]},
+{"Test No":"HRDN-7222",
+"Test Description":"Check compiler permissions",
+"Detail":[
+]},
+{"Test No":"HRDN-7230",
+"Test Description":"Check for malware scanner",
+"Detail":[
+{" - Installed malware scanner":"NOT FOUND"}
+]},
+{"Test No":"HRDN-7231",
+"Test Description":"Check for registered non-native binary formats",
+"Detail":[
+{" - Non-native binary formats":"NOT FOUND"}
+]}]}
+],
+"Results":{"Warnings":[
+{"Descp":"No vulnerability database available [PKGS-7381] "
+,"Details":"pkg audit"
+,"Solution":"Run pkg audit -F"
+,"Reference":"https://cisofy.com/lynis/controls/PKGS-7381/"
+}
+,
+{"Descp":"Found one or more vulnerable packages. [PKGS-7392] "
+,"Reference":"https://cisofy.com/lynis/controls/PKGS-7392/"
+}
+,
+{"Descp":"klogd is not running, which could lead to missing kernel messages in log files [LOGG-2138] "
+,"Reference":"https://cisofy.com/lynis/controls/LOGG-2138/"
+}
+],
+"Suggestion":[
+{"Descp":"Determine runlevel and services at startup [BOOT-5180] "
+,"Reference":"https://cisofy.com/lynis/controls/BOOT-5180/"
+}
+,
+{"Descp":"Consider hardening system services [BOOT-5264] "
+,"Details":"Run '/usr/bin/systemd-analyze security SERVICE' for each service"
+,"Reference":"https://cisofy.com/lynis/controls/BOOT-5264/"
+}
+,
+{"Descp":"Determine why /vmlinuz or /boot/vmlinuz is missing on this Debian/Ubuntu system. [KRNL-5788] "
+,"Details":"/vmlinuz or /boot/vmlinuz"
+,"Reference":"https://cisofy.com/lynis/controls/KRNL-5788/"
+}
+,
+{"Descp":"If not required, consider explicit disabling of core dump in /etc/security/limits.conf file [KRNL-5820] "
+,"Reference":"https://cisofy.com/lynis/controls/KRNL-5820/"
+}
+,
+{"Descp":"Check PAM configuration, add rounds if applicable and expire passwords to encrypt with new values [AUTH-9229] "
+,"Reference":"https://cisofy.com/lynis/controls/AUTH-9229/"
+}
+,
+{"Descp":"Configure password hashing rounds in /etc/login.defs [AUTH-9230] "
+,"Reference":"https://cisofy.com/lynis/controls/AUTH-9230/"
+}
+,
+{"Descp":"Install a PAM module for password strength testing like pam_cracklib or pam_passwdqc [AUTH-9262] "
+,"Reference":"https://cisofy.com/lynis/controls/AUTH-9262/"
+}
+,
+{"Descp":"When possible set expire dates for all password protected accounts [AUTH-9282] "
+,"Reference":"https://cisofy.com/lynis/controls/AUTH-9282/"
+}
+,
+{"Descp":"Look at the locked accounts and consider removing them [AUTH-9284] "
+,"Reference":"https://cisofy.com/lynis/controls/AUTH-9284/"
+}
+,
+{"Descp":"Configure minimum password age in /etc/login.defs [AUTH-9286] "
+,"Reference":"https://cisofy.com/lynis/controls/AUTH-9286/"
+}
+,
+{"Descp":"Configure maximum password age in /etc/login.defs [AUTH-9286] "
+,"Reference":"https://cisofy.com/lynis/controls/AUTH-9286/"
+}
+,
+{"Descp":"Default umask in /etc/login.defs could be more strict like 027 [AUTH-9328] "
+,"Reference":"https://cisofy.com/lynis/controls/AUTH-9328/"
+}
+,
+{"Descp":"To decrease the impact of a full /tmp file system, place /tmp on a separate partition [FILE-6310] "
+,"Reference":"https://cisofy.com/lynis/controls/FILE-6310/"
+}
+,
+{"Descp":"To decrease the impact of a full /var file system, place /var on a separate partition [FILE-6310] "
+,"Reference":"https://cisofy.com/lynis/controls/FILE-6310/"
+}
+,
+{"Descp":"Disable drivers like USB storage when not used, to prevent unauthorized storage or data theft [USB-1000] "
+,"Reference":"https://cisofy.com/lynis/controls/USB-1000/"
+}
+,
+{"Descp":"Disable drivers like firewire storage when not used, to prevent unauthorized storage or data theft [STRG-1846] "
+,"Reference":"https://cisofy.com/lynis/controls/STRG-1846/"
+}
+,
+{"Descp":"Check DNS configuration for the dns domain name [NAME-4028] "
+,"Reference":"https://cisofy.com/lynis/controls/NAME-4028/"
+}
+,
+{"Descp":"Install debsums utility for the verification of packages with known good database. [PKGS-7370] "
+,"Reference":"https://cisofy.com/lynis/controls/PKGS-7370/"
+}
+,
+{"Descp":"Update your system with apt-get update, apt-get upgrade, apt-get dist-upgrade and/or unattended-upgrades [PKGS-7392] "
+,"Reference":"https://cisofy.com/lynis/controls/PKGS-7392/"
+}
+,
+{"Descp":"Install package apt-show-versions for patch management purposes [PKGS-7394] "
+,"Reference":"https://cisofy.com/lynis/controls/PKGS-7394/"
+}
+,
+{"Descp":"Consider using a tool to automatically apply upgrades [PKGS-7420] "
+,"Reference":"https://cisofy.com/lynis/controls/PKGS-7420/"
+}
+,
+{"Descp":"Determine if protocol 'dccp' is really needed on this system [NETW-3200] "
+,"Reference":"https://cisofy.com/lynis/controls/NETW-3200/"
+}
+,
+{"Descp":"Determine if protocol 'sctp' is really needed on this system [NETW-3200] "
+,"Reference":"https://cisofy.com/lynis/controls/NETW-3200/"
+}
+,
+{"Descp":"Determine if protocol 'rds' is really needed on this system [NETW-3200] "
+,"Reference":"https://cisofy.com/lynis/controls/NETW-3200/"
+}
+,
+{"Descp":"Determine if protocol 'tipc' is really needed on this system [NETW-3200] "
+,"Reference":"https://cisofy.com/lynis/controls/NETW-3200/"
+}
+,
+{"Descp":"Consider hardening SSH configuration [SSH-7408] "
+,"Details":"AllowTcpForwarding (set YES to NO)"
+,"Reference":"https://cisofy.com/lynis/controls/SSH-7408/"
+}
+,
+{"Descp":"Consider hardening SSH configuration [SSH-7408] "
+,"Details":"ClientAliveCountMax (set 3 to 2)"
+,"Reference":"https://cisofy.com/lynis/controls/SSH-7408/"
+}
+,
+{"Descp":"Consider hardening SSH configuration [SSH-7408] "
+,"Details":"Compression (set YES to NO)"
+,"Reference":"https://cisofy.com/lynis/controls/SSH-7408/"
+}
+,
+{"Descp":"Consider hardening SSH configuration [SSH-7408] "
+,"Details":"LogLevel (set INFO to VERBOSE)"
+,"Reference":"https://cisofy.com/lynis/controls/SSH-7408/"
+}
+,
+{"Descp":"Consider hardening SSH configuration [SSH-7408] "
+,"Details":"MaxAuthTries (set 6 to 3)"
+,"Reference":"https://cisofy.com/lynis/controls/SSH-7408/"
+}
+,
+{"Descp":"Consider hardening SSH configuration [SSH-7408] "
+,"Details":"MaxSessions (set 10 to 2)"
+,"Reference":"https://cisofy.com/lynis/controls/SSH-7408/"
+}
+,
+{"Descp":"Consider hardening SSH configuration [SSH-7408] "
+,"Details":"Port (set 22 to )"
+,"Reference":"https://cisofy.com/lynis/controls/SSH-7408/"
+}
+,
+{"Descp":"Consider hardening SSH configuration [SSH-7408] "
+,"Details":"TCPKeepAlive (set YES to NO)"
+,"Reference":"https://cisofy.com/lynis/controls/SSH-7408/"
+}
+,
+{"Descp":"Consider hardening SSH configuration [SSH-7408] "
+,"Details":"X11Forwarding (set YES to NO)"
+,"Reference":"https://cisofy.com/lynis/controls/SSH-7408/"
+}
+,
+{"Descp":"Consider hardening SSH configuration [SSH-7408] "
+,"Details":"AllowAgentForwarding (set YES to NO)"
+,"Reference":"https://cisofy.com/lynis/controls/SSH-7408/"
+}
+,
+{"Descp":"Check if any syslog daemon is running and correctly configured. [LOGG-2130] "
+,"Reference":"https://cisofy.com/lynis/controls/LOGG-2130/"
+}
+,
+{"Descp":"Add a legal banner to /etc/issue, to warn unauthorized users [BANN-7126] "
+,"Reference":"https://cisofy.com/lynis/controls/BANN-7126/"
+}
+,
+{"Descp":"Add legal banner to /etc/issue.net, to warn unauthorized users [BANN-7130] "
+,"Reference":"https://cisofy.com/lynis/controls/BANN-7130/"
+}
+,
+{"Descp":"Enable process accounting [ACCT-9622] "
+,"Reference":"https://cisofy.com/lynis/controls/ACCT-9622/"
+}
+,
+{"Descp":"Enable sysstat to collect accounting (no results) [ACCT-9626] "
+,"Reference":"https://cisofy.com/lynis/controls/ACCT-9626/"
+}
+,
+{"Descp":"Enable auditd to collect audit information [ACCT-9628] "
+,"Reference":"https://cisofy.com/lynis/controls/ACCT-9628/"
+}
+,
+{"Descp":"Install a file integrity tool to monitor changes to critical and sensitive files [FINT-4350] "
+,"Reference":"https://cisofy.com/lynis/controls/FINT-4350/"
+}
+,
+{"Descp":"Determine if automation tools are present for system management [TOOL-5002] "
+,"Reference":"https://cisofy.com/lynis/controls/TOOL-5002/"
+}
+,
+{"Descp":"Consider restricting file permissions [FILE-7524] "
+,"Details":"See screen output or log file"
+,"Solution":"Use chmod to change file permissions"
+,"Reference":"https://cisofy.com/lynis/controls/FILE-7524/"
+}
+,
+{"Descp":"Double check the permissions of home directories as some might be not strict enough. [HOME-9304] "
+,"Reference":"https://cisofy.com/lynis/controls/HOME-9304/"
+}
+,
+{"Descp":"One or more sysctl values differ from the scan profile and could be tweaked [KRNL-6000] "
+,"Solution":"Change sysctl value or disable test (skip-test=KRNL-6000:<sysctl-key>)"
+,"Reference":"https://cisofy.com/lynis/controls/KRNL-6000/"
+}
+,
+{"Descp":"Harden compilers like restricting access to root user only [HRDN-7222] "
+,"Reference":"https://cisofy.com/lynis/controls/HRDN-7222/"
+}
+,
+{"Descp":"Harden the system by installing at least one malware scanner, to perform periodic file system scans [HRDN-7230] "
+,"Solution":"Install a tool like rkhunter, chkrootkit, OSSEC"
+,"Reference":"https://cisofy.com/lynis/controls/HRDN-7230/"
+}
+],
+"Hardening index":58,
+"Tests performed":234,
+"Plugins enabled":2,
+"Skipped Tests":[
+]}
+}

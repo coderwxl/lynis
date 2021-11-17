@@ -417,6 +417,18 @@ ETC_PATHS="/etc /usr/local/etc"
 #
 #################################################################################
 #
+# * Custom
+#
+#################################################################################
+#
+    JSON_REPORT="./system_security_audit_result.json"    # json report file
+    IS_RUNNING_TESTS=0
+    IS_NEW_SECTION=0
+    IS_NEW_TEST=0
+    IS_NEW_TEST_DETAIL=0
+#
+#################################################################################
+#
 
 #================================================================================
 # Lynis - Security Auditing and System Hardening for Linux and UNIX - https://cisofy.com
