@@ -823,7 +823,7 @@ ${NORMAL}
             fi
 
             # Search plugins
-            FIND_PLUGINS=$(find ${PLUGINDIR} -type f -name "plugin_[a-z]*_phase${PLUGIN_PHASE}" | sort)
+            FIND_PLUGINS=$(find ${PLUGINDIR} -type f -name "plugin_[a-z\\-]*_phase${PLUGIN_PHASE}" | sort)
             for PLUGIN_FILE in ${FIND_PLUGINS}; do
                 LogText "Found plugin file: ${PLUGIN_FILE}"
                 # Double check if output is a valid file name

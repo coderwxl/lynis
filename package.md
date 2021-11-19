@@ -1,1 +1,0 @@
-tar -czvf lynis.tgz ./lynis/lynis ./lynis/lynis.8 ./lynis/default.prf ./lynis/developer.prf ./lynis/.travis.yml ./lynis/plugins ./lynis/include ./lynis/extras ./lynis/db

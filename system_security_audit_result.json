@@ -34,7 +34,6 @@
 {"Test No":"BOOT-5116",
 "Test Description":"Check if system is booted in UEFI mode",
 "Detail":[
-{" - Checking UEFI boot":"DISABLED"}
 ]},
 {"Test No":"BOOT-5117",
 "Test Description":"Check for systemd-boot bootloader presence",
@@ -243,7 +242,6 @@
 {"Test No":"AUTH-9216",
 "Test Description":"Check group and shadow group files",
 "Detail":[
-{" - Consistency of group files (grpck)":"OK"}
 ]},
 {"Test No":"AUTH-9218",
 "Test Description":"Check login shells for passwordless accounts",
@@ -262,12 +260,11 @@
 {"Test No":"AUTH-9228",
 "Test Description":"Check password file consistency with pwck",
 "Detail":[
-{" - Password file consistency":"OK"}
+{" - Password file consistency":"SUGGESTION"}
 ]},
 {"Test No":"AUTH-9229",
 "Test Description":"Check password hashing methods",
 "Detail":[
-{" - Password hashing methods":"SUGGESTION"}
 ]},
 {"Test No":"AUTH-9230",
 "Test Description":"Check password hashing rounds",
@@ -330,7 +327,7 @@
 {"Test No":"AUTH-9282",
 "Test Description":"Checking password protected account without expire date",
 "Detail":[
-{" - Accounts without expire date":"SUGGESTION"}
+{" - Accounts without expire date":"OK"}
 ]},
 {"Test No":"AUTH-9283",
 "Test Description":"Checking accounts without password",
@@ -340,7 +337,7 @@
 {"Test No":"AUTH-9284",
 "Test Description":"Check locked user accounts in /etc/passwd",
 "Detail":[
-{" - Locked accounts":"FOUND"}
+{" - Locked accounts":"OK"}
 ]},
 {"Test No":"AUTH-9286",
 "Test Description":"Checking user password aging",
@@ -352,7 +349,6 @@
 {"Test No":"AUTH-9288",
 "Test Description":"Checking for expired passwords",
 "Detail":[
-{" - Checking expired passwords":"OK"}
 ]},
 {"Test No":"AUTH-9304",
 "Test Description":"Check single user login configuration",
@@ -498,7 +494,6 @@
 {"Test No":"FILE-6368",
 "Test Description":"Checking ACL support on root file system",
 "Detail":[
-{" - ACL support root file system":"ENABLED"}
 ]},
 {"Test No":"FILE-6372",
 "Test Description":"Checking / mount options",
@@ -829,12 +824,10 @@
 {"Test No":"PKGS-7390",
 "Test Description":"Check Ubuntu database consistency",
 "Detail":[
-{" - Checking APT package database":"OK"}
 ]},
 {"Test No":"PKGS-7392",
 "Test Description":"Check for Debian/Ubuntu security updates",
 "Detail":[
-{" - Checking vulnerable packages":"WARNING"}
 ]},
 {"Test No":"PKGS-7393",
 "Test Description":"Check for Gentoo vulnerable packages",
@@ -1196,47 +1189,47 @@
 {"Test No":"SSH-7408",
 "Test Description":"Check SSH specific defined options",
 "Detail":[
-{" - OpenSSH option: AllowTcpForwarding":"SUGGESTION"}
+{" - OpenSSH option: AllowTcpForwarding":"NOT FOUND"}
 ,
-{" - OpenSSH option: ClientAliveCountMax":"SUGGESTION"}
+{" - OpenSSH option: ClientAliveCountMax":"NOT FOUND"}
 ,
-{" - OpenSSH option: ClientAliveInterval":"OK"}
+{" - OpenSSH option: ClientAliveInterval":"NOT FOUND"}
 ,
-{" - OpenSSH option: Compression":"SUGGESTION"}
+{" - OpenSSH option: Compression":"NOT FOUND"}
 ,
-{" - OpenSSH option: FingerprintHash":"OK"}
+{" - OpenSSH option: FingerprintHash":"NOT FOUND"}
 ,
-{" - OpenSSH option: GatewayPorts":"OK"}
+{" - OpenSSH option: GatewayPorts":"NOT FOUND"}
 ,
-{" - OpenSSH option: IgnoreRhosts":"OK"}
+{" - OpenSSH option: IgnoreRhosts":"NOT FOUND"}
 ,
-{" - OpenSSH option: LoginGraceTime":"OK"}
+{" - OpenSSH option: LoginGraceTime":"NOT FOUND"}
 ,
-{" - OpenSSH option: LogLevel":"SUGGESTION"}
+{" - OpenSSH option: LogLevel":"NOT FOUND"}
 ,
-{" - OpenSSH option: MaxAuthTries":"SUGGESTION"}
+{" - OpenSSH option: MaxAuthTries":"NOT FOUND"}
 ,
-{" - OpenSSH option: MaxSessions":"SUGGESTION"}
+{" - OpenSSH option: MaxSessions":"NOT FOUND"}
 ,
-{" - OpenSSH option: PermitRootLogin":"OK"}
+{" - OpenSSH option: PermitRootLogin":"NOT FOUND"}
 ,
-{" - OpenSSH option: PermitUserEnvironment":"OK"}
+{" - OpenSSH option: PermitUserEnvironment":"NOT FOUND"}
 ,
-{" - OpenSSH option: PermitTunnel":"OK"}
+{" - OpenSSH option: PermitTunnel":"NOT FOUND"}
 ,
-{" - OpenSSH option: Port":"SUGGESTION"}
+{" - OpenSSH option: Port":"NOT FOUND"}
 ,
-{" - OpenSSH option: PrintLastLog":"OK"}
+{" - OpenSSH option: PrintLastLog":"NOT FOUND"}
 ,
-{" - OpenSSH option: StrictModes":"OK"}
+{" - OpenSSH option: StrictModes":"NOT FOUND"}
 ,
-{" - OpenSSH option: TCPKeepAlive":"SUGGESTION"}
+{" - OpenSSH option: TCPKeepAlive":"NOT FOUND"}
 ,
-{" - OpenSSH option: UseDNS":"OK"}
+{" - OpenSSH option: UseDNS":"NOT FOUND"}
 ,
-{" - OpenSSH option: X11Forwarding":"SUGGESTION"}
+{" - OpenSSH option: X11Forwarding":"NOT FOUND"}
 ,
-{" - OpenSSH option: AllowAgentForwarding":"SUGGESTION"}
+{" - OpenSSH option: AllowAgentForwarding":"NOT FOUND"}
 ]},
 {"Test No":"SSH-7440",
 "Test Description":"Check OpenSSH option: AllowUsers and AllowGroups",
@@ -2094,8 +2087,6 @@
 ,
 {" File: /etc/ssh/sshd_config":"SUGGESTION"}
 ,
-{" Directory: /root/.ssh":"OK"}
-,
 {" Directory: /etc/cron.d":"SUGGESTION"}
 ,
 {" Directory: /etc/cron.daily":"SUGGESTION"}
@@ -2137,14 +2128,6 @@
 "Test Description":"Check sysctl key pairs in scan profile",
 "Detail":[
 {" - dev.tty.ldisc_autoload (exp: 0)":"DIFFERENT"}
-,
-{" - fs.protected_fifos (exp: 2)":"DIFFERENT"}
-,
-{" - fs.protected_hardlinks (exp: 1)":"OK"}
-,
-{" - fs.protected_regular (exp: 2)":"DIFFERENT"}
-,
-{" - fs.protected_symlinks (exp: 1)":"OK"}
 ,
 {" - fs.suid_dumpable (exp: 0)":"DIFFERENT"}
 ,
@@ -2239,10 +2222,6 @@
 ,"Reference":"https://cisofy.com/lynis/controls/PKGS-7381/"
 }
 ,
-{"Descp":"Found one or more vulnerable packages. [PKGS-7392] "
-,"Reference":"https://cisofy.com/lynis/controls/PKGS-7392/"
-}
-,
 {"Descp":"klogd is not running, which could lead to missing kernel messages in log files [LOGG-2138] "
 ,"Reference":"https://cisofy.com/lynis/controls/LOGG-2138/"
 }
@@ -2266,8 +2245,8 @@
 ,"Reference":"https://cisofy.com/lynis/controls/KRNL-5820/"
 }
 ,
-{"Descp":"Check PAM configuration, add rounds if applicable and expire passwords to encrypt with new values [AUTH-9229] "
-,"Reference":"https://cisofy.com/lynis/controls/AUTH-9229/"
+{"Descp":"Run pwck manually and correct any errors in the password file [AUTH-9228] "
+,"Reference":"https://cisofy.com/lynis/controls/AUTH-9228/"
 }
 ,
 {"Descp":"Configure password hashing rounds in /etc/login.defs [AUTH-9230] "
@@ -2276,14 +2255,6 @@
 ,
 {"Descp":"Install a PAM module for password strength testing like pam_cracklib or pam_passwdqc [AUTH-9262] "
 ,"Reference":"https://cisofy.com/lynis/controls/AUTH-9262/"
-}
-,
-{"Descp":"When possible set expire dates for all password protected accounts [AUTH-9282] "
-,"Reference":"https://cisofy.com/lynis/controls/AUTH-9282/"
-}
-,
-{"Descp":"Look at the locked accounts and consider removing them [AUTH-9284] "
-,"Reference":"https://cisofy.com/lynis/controls/AUTH-9284/"
 }
 ,
 {"Descp":"Configure minimum password age in /etc/login.defs [AUTH-9286] "
@@ -2322,10 +2293,6 @@
 ,"Reference":"https://cisofy.com/lynis/controls/PKGS-7370/"
 }
 ,
-{"Descp":"Update your system with apt-get update, apt-get upgrade, apt-get dist-upgrade and/or unattended-upgrades [PKGS-7392] "
-,"Reference":"https://cisofy.com/lynis/controls/PKGS-7392/"
-}
-,
 {"Descp":"Install package apt-show-versions for patch management purposes [PKGS-7394] "
 ,"Reference":"https://cisofy.com/lynis/controls/PKGS-7394/"
 }
@@ -2348,56 +2315,6 @@
 ,
 {"Descp":"Determine if protocol 'tipc' is really needed on this system [NETW-3200] "
 ,"Reference":"https://cisofy.com/lynis/controls/NETW-3200/"
-}
-,
-{"Descp":"Consider hardening SSH configuration [SSH-7408] "
-,"Details":"AllowTcpForwarding (set YES to NO)"
-,"Reference":"https://cisofy.com/lynis/controls/SSH-7408/"
-}
-,
-{"Descp":"Consider hardening SSH configuration [SSH-7408] "
-,"Details":"ClientAliveCountMax (set 3 to 2)"
-,"Reference":"https://cisofy.com/lynis/controls/SSH-7408/"
-}
-,
-{"Descp":"Consider hardening SSH configuration [SSH-7408] "
-,"Details":"Compression (set YES to NO)"
-,"Reference":"https://cisofy.com/lynis/controls/SSH-7408/"
-}
-,
-{"Descp":"Consider hardening SSH configuration [SSH-7408] "
-,"Details":"LogLevel (set INFO to VERBOSE)"
-,"Reference":"https://cisofy.com/lynis/controls/SSH-7408/"
-}
-,
-{"Descp":"Consider hardening SSH configuration [SSH-7408] "
-,"Details":"MaxAuthTries (set 6 to 3)"
-,"Reference":"https://cisofy.com/lynis/controls/SSH-7408/"
-}
-,
-{"Descp":"Consider hardening SSH configuration [SSH-7408] "
-,"Details":"MaxSessions (set 10 to 2)"
-,"Reference":"https://cisofy.com/lynis/controls/SSH-7408/"
-}
-,
-{"Descp":"Consider hardening SSH configuration [SSH-7408] "
-,"Details":"Port (set 22 to )"
-,"Reference":"https://cisofy.com/lynis/controls/SSH-7408/"
-}
-,
-{"Descp":"Consider hardening SSH configuration [SSH-7408] "
-,"Details":"TCPKeepAlive (set YES to NO)"
-,"Reference":"https://cisofy.com/lynis/controls/SSH-7408/"
-}
-,
-{"Descp":"Consider hardening SSH configuration [SSH-7408] "
-,"Details":"X11Forwarding (set YES to NO)"
-,"Reference":"https://cisofy.com/lynis/controls/SSH-7408/"
-}
-,
-{"Descp":"Consider hardening SSH configuration [SSH-7408] "
-,"Details":"AllowAgentForwarding (set YES to NO)"
-,"Reference":"https://cisofy.com/lynis/controls/SSH-7408/"
 }
 ,
 {"Descp":"Check if any syslog daemon is running and correctly configured. [LOGG-2130] "
@@ -2456,9 +2373,32 @@
 ,"Reference":"https://cisofy.com/lynis/controls/HRDN-7230/"
 }
 ],
-"Hardening index":58,
-"Tests performed":234,
+"Hardening index":56,
+"Tests performed":222,
 "Plugins enabled":2,
 "Skipped Tests":[
+"BOOT-5108 - Check Syslinux as bootloader"
+,
+"BOOT-5109 - Check rEFInd as bootloader"
+,
+"BOOT-5116 - Check if system is booted in UEFI mode"
+,
+"BOOT-5140 - Check for ELILO boot loader presence"
+,
+"AUTH-9216 - Check group and shadow group files"
+,
+"AUTH-9229 - Check password hashing methods"
+,
+"AUTH-9288 - Checking for expired passwords"
+,
+"FILE-6368 - Checking ACL support on root file system"
+,
+"PKGS-7390 - Check Ubuntu database consistency"
+,
+"PKGS-7392 - Check for Debian/Ubuntu security updates"
+,
+"FIRE-4586 - Check firewall logging"
+,
+"CRYP-7930 - Determine if system uses LUKS block device encryption"
 ]}
 }
